@@ -1,0 +1,924 @@
+async function enviarScript(scriptText){
+	const lines = scriptText.split(/[\n\t]+/).map(line => line.trim()).filter(line => line);
+	main = document.querySelector("#main"),
+	textarea = main.querySelector(`div[contenteditable="true"]`)
+	
+	if(!textarea) throw new Error("Não há uma conversa aberta")
+	
+	for(const line of lines){
+		console.log(line)
+	
+		textarea.focus();
+		document.execCommand('insertText', false, line);
+		textarea.dispatchEvent(new Event('change', {bubbles: true}));
+	
+		setTimeout(() => {
+			(main.querySelector(`[data-testid="send"]`) || main.querySelector(`[data-icon="send"]`)).click();
+		}, 100);
+		
+		if(lines.indexOf(line) !== lines.length - 1) await new Promise(resolve => setTimeout(resolve, 250));
+	}
+	
+	return lines.length;
+}
+
+enviarScript(`
+Creditos a:Ramdaram
+
+
+Call Of Duty: Modern Warfare 2
+
+tenemos confirmación 07 están en posición [Aplausos] [Música] helicóptero acercándose Este es el general cobran estuvo a tiempo sobre ahí y luego veamos que está intentando hacer en medio de la nada lo veo qué es lo que ves personal 
+
+armado armadura y recursos todos rusos qué carajos es una venta afirmativo dos pájaros un tiro tenemos que identificar algo Antes de hacer esto muchachos tú identificas el general ahí escoltas armados alrededor de un VIP los rusos están 
+
+contentos de verlo será la última vez que lo hagan genera algo grande a la vista copiado unidades objetivo confirmado tienes autorización cerca de la zona el ataque será potente copiado a todas las unidades y listo para entrega 
+
+inmediata esperen al lanzamiento ordenadas objetivos designado 2 1 bueno seguido requerirá un trabajo manual para mantenerlo en curso y el orientado al noreste a 065 grados velocidad 500 metros tiempo el objetivo 5 segundos antes 
+
+directo al banco objetivo destruido [Música] [Música] adelante conozco esa mirada [Aplausos] Estamos en guerra serías el primero en enterarte por supuesto localizamos a la mano derecha de gobranis comandante de la fuerza Cruz asumió la 
+
+responsabilidad de Irán apoyando el terrorismo dinero armas información bueno es ambicioso Es peligroso señor quiere vengarse por el ataque de cobrani está tramando algo no podemos atacar en él no está en Irán señor se encuentran almas 
+
+más solo hay una forma de saberlo qué hora es ahora [Música] A quién enviamos a dirigir eso tenemos una victoria un asiento Sí señor no hay problema ninguno señor Vámonos los ataques aéreos van sobreposiciones enemigas en almansa 
+
+inteligencia confirma una concentración de combatientes de alcatala en el valle creemos que están protegiendo algo sabemos que hay soldados protegiendo tres estructuras hassan podría estar atrincherado dentro ghostis o liderada en una 
+
+unidad de operaciones especiales para matar o capturar a hassan esta noche un helicóptero infiltrará a dos equipos en puntos separados en el límite de la zona el equipo Bravo despejará los edificios 1 y 2 Equipo Alfa al edificio 3 los 
+
+tiradores tienen permiso para ejecutar pero queremos la hassan con vida para interrogarlo estén atentos al catala depende del comandante si está ahí morirá por él buena cacería el equipo Bravo baja aquí el equipo Alfa se queda gordo 
+
+para aterrizar más adelante ambos equipos se reúnen a mitad de camino recuerden queremos pero hay que capturarlo o matarlo [Música] rápido son unos bravos avanzando a zona secundaria a todas las unidades tienen la razón uno en la mira 
+
+ahí viene venga venga segundo misión Perdón Alfa situación [Risas] Alfa Nos dirigimos al edificio 1 aguanten tenemos que asegurar la zona del impacto primero buscamos A hassan eso le quitará presión Alfa luego aseguramos la zona del 
+
+impacto está claro entendido vamos a la casa otro árbol Vamos a entrar este en el área planta baja despejada no hay rastros saben que llegamos [Aplausos] cabo nos dispara un RPG desde el edificio 2 primer piso tomando el edificio dos 
+
+aguante 7 1 entrando Vamos a entrar [Aplausos] mierda metieron hay uno en este pasillo [Aplausos] RPG enemigo eliminado recibido buen trabajo [Música] no castigan a estos nosotros edificio dos asegurado callamos a la zona de impacto 
+
+aquí hay un video de hassan Van a necesitar un nuevo héroe [Música] responsables del asesinato del General cobranini deben ser sentenciados también compañero Sí el blindaje la detuvo estos son los que derribaron a Alfa Sí ya podemos 
+
+asegurar la zona del impacto gravo reúnanse afuera alcatala está usando buen equipo vamos a la zona del impacto ayudar a los heridos los demás que desde aquí y cubran los recibido Alfa 02 Bravo 07 edificio 2 asegurado vamos hacia allá 
+
+enterado posibles contactos al Catalán nos espera suv Quédate cerca un Aliado me alegra ver los muchachos tenemos cinco bajas un herido solo yo tengo arma y tengo poca munición Ayúdenme a moverlo no hay tiempo ya están aquí apunta a 
+
+esos árboles [Música] [Aplausos] [Música] ven algo hay movimientos si ven a alguien disparen mierda Cuántos son [Aplausos] ataquen tiradores en la pared ya rugiste Teniente mierda te necesito se acercan [Aplausos] despejado por ahora 
+
+atentos a esos árboles aún hay movimiento [Aplausos] quiero apoyo aéreo en esos árboles entendido lo pido aguanten muchachos aún no acabamos 07 apoyo a tres minutos apoyo aéreo en camino entre los árboles no los veo si me veo una mierda 
+
+aquí vienen [Aplausos] están lanzando granada hombre herido está muerto sigan disparando [Aplausos] quedan unos pocos acabando no hay movimiento estás pienso estoy bien le dieron a dos tres está muerto 72 te necesito aquí ahora 
+
+entendido el camino Ghost deberíamos retroceder a la casa negativo despejamos esta posición Y avanzamos si hassan sigue aquí seguro está más adelante 76 pasados con el apoyo recibido un momento siete uno juego de apoyo a un minuto 
+
+quiero 01 tienen permiso para atacar lo que sea pasando a nuestra posición peligro cercano aprobado entendido mierda y ahora qué Teniente hay vehículos blindados en camino hay cuatro deje que se acerquen allí vienen listos para atacar 
+
+Prepárense eliminando pasando [Aplausos] soporte aéreo exposición vamos a atacar despejado espero carajo despejado quiero ser uno no hay movimiento en la zona Gracias por la ayuda entendido kilo 01 entrando en patrón de espera 76 Envía 
+
+un pájaro para una evacuación de emergencia recibido sigue siendo el objetivo Así es a buscar al desgraciado Alfa con nosotros recibido teniente esos malditos nos usaron de carnada verdad es también abastecidos y pelean con inteligencia 
+
+gracias a hassan parece que Tenías razón la caída del helicóptero les dio una oportunidad veamos si la tomaron muchachos siguen En posición en el aire que se mantengan alerta avanzamos veo el edificio 3 es el objetivo casan podría estar 
+
+ahí querido francotirador en la azotea al suelo elimina el tirador el resto abajo hasta que esté despejado le dieron 75 cayó como carajos nos ven tienen visión nocturna somos blancos fáciles aquí francotirador caído más francotiradores 
+
+en la azotea mátenlos pasó al suelo [Música] los militantes de alcalde están atrincherados aquí Buenas tardes defendiendo algo importante apoyo aéreo 76 solicita fuego en ese edificio ahora no sabemos instantáneo está adentro no nos 
+
+deja la opción 76 dispara el edificio pero no lo arrastre uno Solicito juego el objetivo es el edificio adelante no arrasen el edificio en camino [Aplausos] qué gloriosa vista gracias a Dios por el apoyo aéreo sí espero que nos han sido 
+
+más fácil de encontrar Quiero el edificio asegurado Shop entra encontremos muerto 7 1 voy a entrar puta madre avanzando planta baja revisen los cuerpos Debemos identificar uno menos alguien viajar negativo no descansan suicida 
+
+neutralizado avanzando [Aplausos] [Aplausos] me dirijo el primer piso avanzo el primer piso [Música] tengo dos blancos no es casado [Aplausos] está en todos lados pero no está aquí un tiempo baja uno tieso [Aplausos] estuvo aquí es un 
+
+maldito centro de operaciones explora un poco sobre busquen por ahí a ver qué encuentran Miren el uniforme de hashtag Entonces sí estuvo aquí lo perdimos cuando aseguramos la zona del impacto quieres decir que no debimos haber ayudado 
+
+las decisiones tienen consecuencias hay movimiento afuera en camino Bravo reúnanse afuera si hassan no está aquí qué carajos están protegiendo buena pregunta que tenemos un almacén la muerte está abierta hoy algo adentro copiado a 
+
+despejarlo te seguimos contacto [Aplausos] [Música] [Aplausos] [Aplausos] [Aplausos] [Aplausos] [Aplausos] violencia despejado todo despejado a buscar encontremos lo que estaban escondiendo al catala tiene de todo aquí dentro Qué mierda 
+
+es esto está todo en inglés Santo cielo y siles balísticos es un lanzador móvil 1600 kilómetros de alcance mínimo como rayos es que Irán logró conseguirlo 76 contáctanos con lazwell Ok aguarden Bravo 76 Charly awater 1 me copias aquí 
+
+tenemos algo díganme que encontraron tienes que ver esto negativo encontramos almas hassan tiene misiles son estadounidenses repite lo último repito hassan tiene misiles estadounidenses bien salgan de la sala vamos todo el mundo fuera 
+
+ya [Música] Irán se apropió de misiles estadounidenses los misiles estadounidenses ya son de Alcalá no ha repartido nuestros malditos misiles balísticos como si fuera Halloween y no lo sabíamos le da Irán una negación admisible negación 
+
+mi trasero y no entiende que ver con esto Quiero saber cuántos misiles tienen y en dónde quieren usarlos fijastán nueve misiles alguien se los contrabandea Entonces te sugiero que averigües quién en este instante mi grupo necesita dos 
+
+horas con esos misiles vamos a rastrear a cualquiera que los haya visto negativo quiero que los destruyan general tienen información valiosa Este es un fallo de inteligencia no permitiré que sea uno táctico habrá 500 soldados enemigos 
+
+en ese lugar antes del amanecer necesitamos ganar ahora moviliza tu equipo para que ataque Quiero las armas destruidas ya [Aplausos] amsterdam qué vendría ser amsterdam en todo esto un punto de tráfico los puertos y canales no son 
+
+seguros Irán tiene conexiones ahí nosotros también bien El capitán está rastreando una célula de alcatala en el país Esa es la primera buena noticia que he escuchado hoy lo contactará y me encargaré de esto yo misma regresando al campo 
+
+quiero hacer esto bien nada de errores Eso es lo que quiero perfecto quiero atado y envuelto como un regalo hasta entonces el problema es tuyo naturalmente señor [Música] en cuanto llegas menos de una hora dónde estás en el canal debajo 
+
+de un puente vigilado lleva un contenedor de misiles negativo este no esperemos que nos lleve directo al que sí estar en contacto todo listo [Música] [Risas] [Aplausos] [Aplausos] en el perímetro sí Guardián por todo el muelle tendrán 
+
+que eliminarlos para llegar a la barcaza a trabajar fuera bien hay que dividirnos yo iré por afuera tú despeja el muelle en silencio te veo en la barcaza bien Te sigo capitán [Aplausos] uno más en el muelle comienza con él podría ser un 
+
+problema hemos camino hasta la casa andando capitán tengo un arma estoy allí arriba [Aplausos] lo veo veo uno [Música] voy a hacer uno a Bravo Quiero un informe avanzamos en el mar entran en cuanto sea posible Puede que no tengamos 
+
+mucho tiempo yo [Música] estoy carajo [Música] [Aplausos] entendido [Aplausos] [Música] [Aplausos] [Aplausos] estoy cerca de la barcaza venden cuando puedas pero no te descuides recibidos [Aplausos] limpio tiene llave vamos ya vamos a 
+
+abordar Mira esto las almas un cartel mexicano qué demonios hacen aquí un cartel para el transporte la barcaza es de los narcos más el cartel [Música] es su teléfono el cartel se reunirá con al catalán algo va a pasar una hora [Música] 
+
+propuse a guachepí estoy en posición en la cafetería dos en la mesa a las 4 uno del cartel uniraní acogedor que están haciendo Están en una transacción electrónica [Música] le están pagando al cartel por alto averigüemos la razón 
+
+seguridad bastante voy en camino encárgate de los guardias y hablaremos con el amigo del cartel y tú extracción avísame cuando se van a mover esta noche no despertamos Necesitamos saber qué es Y a dónde vas la guarda hay dos guardias 
+
+del Cartel al final del puente mantengamos las armas ocultas veamos si se dividen [Música] bien uno se retira lo seguiré yo me encargo del que está en el puente en movimiento me diste demasiado vamos guardias derribado el puente está 
+
+libre buen trabajo reúnete conmigo la carga es humana un VIP hacia Estados Unidos O sea que está en México o sea que hay tiempo para detenerlo necesitamos a nuestro amigo del cartel para una charla ahora muchas personas se acerque a 
+
+Estados Unidos Cuáles son las órdenes está rodeado de guardias no hemos explorado el área podría ver más guardias no hay tiempo para registrar el área yo no necesitamos una distracción Tómala qué diablos es esto granada señuelo 
+
+funcionará vuelve con la escuela empecemos con esto [Aplausos] por el callejón Cuando comienza el caos ahí es cuando el cártel Ahí es donde más ya tienen los guardias toma uno yo me encargo del otro recibido Llévate dónde estás guardias 
+
+abatidos vamos para allá al Capitán aseguraré la extracción nos vemos en el puente 1 paquete asegurado vamos hacia allá [Aplausos] [Aplausos] Dios traiga [Aplausos] buen trabajo averigüemos A dónde llevan a hassan para interceptarlo 
+
+como haremos que hable puedo ser muy persuasiva [Aplausos] [Música] [Aplausos] creí que ya nos llamábamos por nuestros nombres debe ser algo serio necesito tu ayuda Alejandro dime el cartel de las almas meterá un terrorista iraní a 
+
+través de la frontera los terroristas no cruzan la frontera Sur lo sabemos ellos también lo saben y es exactamente por eso que lo harán necesito que los detengas Quién es mi objetivo el mayor hassan ciani cuándo esta noche accedía un 
+
+dron de vigilancia tengo Visión tengo ahí abajo llegó la patrulla fronterita los narcos usan a los migrantes como distracciones seguro están moviendo entendido Dónde está el FBI el FBI está lejos tú eres nuestra única arma Rodolfo los 
+
+migrantes son una distracción el objetivo se mueve parece que cruzaron el río en una lancha vamos a buscarlos en la frontera güey no tenemos jurisdicción nos encargaremos de que no pase [Música] [Música] [Aplausos] el cartel no ves 
+
+rápido aún podemos atraparnos antes de que crucen entendido el muro está más adelante prepárate el cartel de las almas trabajando con Irán eso es nuevo y se casan cruza cambio de tácticas cuento a cuatro hostiles veo a hassan arriba del 
+
+muro flores podemos perderlo debemos involucrarnos dinero fácil poder irse bájale mierda despejado despejado el objetivo cruzó se está moviendo vamos en persecución lo sé sigue presionando al FBI y a la policía local fuera Rodolfo usa 
+
+la escalera ya que subas necesitamos la identificación correcta de hassan es algo negativo corrió iremos tras él el cartel lo moverá a una casa de seguridad en el pueblo encontremoslo entendido casán tiene más amigos aquí que nosotros 
+
+cuidado Entonces vamos hay alguien por aquí Oye qué carajos especiales Pueden saber por aquí vamos regresan adentro casa de la esquina por aquí por la puerta copiado la veo por favor abre la jova vámonos fue por aquí vamos fuerzas 
+
+especiales fuerzas especiales cuarto despejado vamos suelta el alma salgan de mi casa retrocedan ahora dónde se fueron los hombres que entraron por aquí Rodolfo vamos hay que avanzar aquí en flores y Barajas el objetivo va al oeste a 
+
+una casa de seguridad la policía local va en camino fuera está por allá Oigan los pedos gente del cartel [Aplausos] [Aplausos] despejado despejado Mira se fueron por aquí estás bien no es nada y tú estoy bien por aquí puede que hassan 
+
+esté solo no por mucho tiempo hay fuerzas especiales al suelo lárguense de mi casa no vine a lastimarte Estoy buscando a alguien mierda no nos pierdas donde está el tipo que pasó por aquí Oye espera manos arriba Ay ay ay de la derecha 
+
+arriba manos arriba no te muevas mierda responde afuera la casa de seguridad Cuál es la casa de seguridad ya tienen lo que quieren ahora largo [Música] deberías pensar en mudarte Rodolfo andando entendido policía local se comunicó 
+
+[Aplausos] suelten sus malditas armas Ahora solo haz lo que dices todo entendido camina hacia mí Quiero ver tus manos sobre la cabeza te dispararé si Debo hacerlo soy el coronel Alejandro Vargas fuerzas especiales vamos tras un 
+
+terrorista Gómez espera son sus tipos no sé diferenciarlos de los tipos del Cartel donde está tu sospechoso nos seguimos ataca cuando estén cerca [Aplausos] dice el interior lo que haré las salidas el exterior entrando policía [Música] 
+
+no disparen no disparen mantente atento voy al primer piso [Música] pierdo todo sabes quién soy eres un terrorista pendejo Soy un soldado y vine aquí a luchar No qué arda o mordió cobran cuál es tu estado Rodolfo voy a entrar Coronel no 
+
+no voy a salir Rodolfo dónde ha ido lo están trasladando [Música] algo cruza en el Atlántico es un barco lleva alguna carga [Música] está de vuelta bajo protección del cartel en las almas las fuerzas especiales mexicanas confirmaron que 
+
+traer algo importante a los Estados Unidos El cargamento podría tratarse de contenedores con misiles no sabemos Cuántos ni sabemos cuáles son sus objetivos para averiguarlo debemos capturar y traerlo para interrogarlo enviaremos a 
+
+solvia Ghost para que se encuentren con las fuerzas especiales mexicanas en el país junto con todo el personal que necesiten no podemos empezar una guerra en México general Claro si a su compañía que nos ayuden sus reglas para entrar en 
+
+acción nos pueden ayudar a reducir los obstáculos burocráticos Y llevar a cabo esto encontremos [Música] [Aplausos] [Música] creo que en realidad prefiere que le digan en ti bienvenidos nunca había estado en México Esto no es México es 
+
+las almas los contratistas vienen de refuerzo traen herramientas necesitarán espacio bien Dónde está hassan en una casa de Cartel cerca de aquí está bien mi segundo al mando subteniente Rodolfo Parra La tengo miedo a los fantasmas Y a 
+
+ti te dan miedo no mejor así [Música] camioneta blanca cuatro armados Oye tranquilo calma aquí es normal Las Armas en la calle son jurisdicción de la policía Dónde está la policía bueno las almas tiene problemas graves aquí hay pocos 
+
+que ejercen la ley y los que se oponen a la corrupción desaparecen qué hay del ejército como estamos bien entrenados a los soldados nos reclutan los narcos porque a ustedes no crecemos aquí nos apodan los vaqueros nos aman llamamos este 
+
+lugar y moriremos defendiendolo [Aplausos] [Música] niños armas y globos que usa la generosidad para ganarse al pueblo hasta los niños sobre todo los niños Qué pasó ahí narcomantas son del Cartel mensajes del Sin nombre advertencias 
+
+reclamos de territorio [Música] nadie sabe quién es pero está en todas partes y eso lo hace un rato pero los vaqueros nos gustan los retos con esa máscara encajarás bien aquí Oye Cálmate punto de control es el ejército ve a la derecha 
+
+evitalos porque hay tropas que manejan Sin nombre como les dije está en todos lados [Música] recibido armas vistas vaqueros atrás del pueblo todos los víctores estén listos 3 2 1 buen lugar para tener a hassan vamos contacto todos los 
+
+Víctor avancen recibidos [Música] atacando alma perdida despejado aseguremos esta casa luego vamos por jasón el cartel lo volverá rápido entonces seamos más rápidos cuidado vienen preparados por la puerta [Música] [Música] podría estar 
+
+en cualquier sitio habitación despejada buen disparo hermano sin rastro de hassan despejado qué le ocurre a las familias de aquí las almas atrae la violencia Así que escapan la puerta Prepárate para moverte espera Víctor dos soy uno uno 
+
+despliegue en humo salimos al exterior uno fuera donde está tu familia Alejandro lo mantengo en secreto para protegerlos tenemos cobertura Vámonos conmigo solo aquí es donde ocultaba esperen resistencia todos los equipos con tensión 
+
+listos para irrumpir adelante en las escaleras chicas está aquí estará en este cuarto asegura la habitación descubriré edificio objetivo asegurado casa no está entendido deben haberlo trasladado cuando recientemente fuerza cuts es su 
+
+bandera estuvo aquí la información de Alejandro era buena comandante tiene el ejército mierda ejército tenemos refuerzos negativos 03 retrocedan ahora recibidos qué hacemos fuimos a mis hombres yo cuando se refieren retrocedemos quieres 
+
+que ataquemos el maldito ejército mexicano El cartel de paga estas tropas ayudan a dejarte la proteger a mis amigos atacaremos hasta que mi gente esté asando varios vehículos transporte para tropas armadura ligera alto al fuego y se 
+
+acerquen fuego fuego no resisten tanto [Aplausos] entendido hacia el refugio y dónde estamos a salvo pues hay que moverlos el ejército está justo detrás entendido vamos por la colina nos perderemos en las montañas separémonos la vieja 
+
+ruta derecho hasta el Pointer Rodríguez junta cubierto y contraataca en dónde te dieron carnal viene el chaleco el último por ahora llegamos conoces estos senderos a la perfección pero también el ejército no podemos parar un ejército 
+
+hay que evacuar Rodríguez solicita extracción sí comandante enemigo salto aquí a cubierto sí Coronel 22 rojaremos con polvo destrucción fuego avanzamos para que le metenlo Rodríguez recuperar la comunicación control número uno reacción 
+
+inmediata en el puente del río de las almas me copian control me escuchan sí despejado por ahora pero ya vendrán más sabemos algo de Rodolfo no no tenemos comunicación tenemos que seguir por aquí la montaña bloquea la señal tu soldado 
+
+puedo contactarlos espero que sí Cuál es el plan del Río Ahí va a ser la extracción Y si no hay extracción [Aplausos] RPG ejército por el ritmo [Aplausos] último cargador tengo munición algún herido negativo todo bien bien conmigo 
+
+Tendremos que saltar aquí lo conseguiremos hermanos [Aplausos] esos pinches cabrones no están lejos Hacia dónde Alejandro adelante Rodríguez sigue ocupándote de la radio los demás Vean si hay francotiradores usa esa saliente habrá un 
+
+sendero hacia la montaña Alguna novedad créanme deben andar por ahí habla Víctor uno me escuchan tendrás que saltar tú Rodríguez ya tenemos señal negativo tenemos que llegar al río por aquí podemos pasar escucha escucha Oyes eso viene 
+
+un helicóptero sí Prepárense para disparar nos tomaremos por sorpresa para dónde está el puente allá adelante pasando el helicóptero van a intentar eliminarlos Tendremos que atravesarlos estamos listos para atacarso perdida [Aplausos] 
+
+[Aplausos] [Aplausos] [Aplausos] [Aplausos] por la colina el puente está cerca pueden desplegar tiradores aquí procedan con cautela ahí está el puente No veo la extracción el mensaje nunca le llegó me lleva la chingada llamaremos por 
+
+radio al llegar ahí por aquí termina con cuidado Aquí estos barrancos son peligrosos conoces el camino soñamos escaparnos de la escuela y jugar aquí hasta que llegaron los carteles Exacto los narcos lo cambiaron todo el ejército nos 
+
+rastrea ganaremos un poco de terreno amigo nos trajiste un callejón sin salida y saltaremos no pierdan su arma turnos sargento también hermanos afirmativo Sí respirando vamos por el río hacia el puente use las rocas para cubrirse a 
+
+todas las estaciones aquí Víctor 01 me copian repito la radio empieza a captar algo la voz suena familiar ahí vienen fuego discreción contacto adelante tienen refuerzos del ejército [Aplausos] [Aplausos] [Aplausos] [Aplausos] [Aplausos] 
+
+[Música] [Aplausos] vamos por el río más adelante no es profundo vamos vamos vehículos en el puente no son nuestros mierda el ejército ha cubierto tenemos que resistir aquí y conseguir extracción está imposible contra ese blindaje 
+
+carajo aquí cada uno atacaremos el puente al norte de su posición peligro cercano es ese de la compañía estado un Aliado a todas las estaciones no se detecta movimiento hostil adelante Me alegro de verlos Igualmente camarada por aquí 
+
+encontramos un vehículo para extracción entendido atención tenemos una posible pista sobre el paradero de hassan dos clics al norte de su posición es el territorio de las almas tienen un complejo allí entre todos vamos yo conduzco les 
+
+parece si acabamos a hassan con fuego desde el cielo atrapemos a este desgraciado afirmativo avanzamos hacia el objetivo Shadow uno fuera piloto vamos hacia ese complejo sí comandante vamos a preparar proyectiles entendido oficial de 
+
+armas prepárate apenas estamos calentando recibido piloto tienes el control una vez en posición rodea el objetivo y mantente así señor contáctenme con shepard recibir documento tenemos allá señor comandante contigo tuve que ayudar a tus 
+
+muchachos por suerte tienen amigos influyentes avanzamos al objetivo vamos a hablar con este cabrona que nos cuente unas cosas así asegurado entendido fuera atención escuchen estos hombres en tierra las fuerzas especiales de México la 
+
+141 son sus hermanos ahora tratenlos como tal y hagamos la misión Sí sí muy bien Ghost utilizado uno rodeando las instalaciones espero confirmación siete marcaremos nuestra posición con el láser guía de cambio entendido 07 Cómo 
+
+encontramos a hassan tendrá guardias armados protección del Cartel hay muchos retos del aire despejemos los edificios recibidos márcanos estamos al este del complejo los chichos estamos llegando copiado se ve aliados marcados con la 
+
+serie r confirmar visual 07 nos marcamos con la serie r nos ven cambio copiado los veo 07 tu marcador Shadow uno atento se mueve con un guardia armado cubre exterior despejaremos los edificios me copias 07 recibido Guardia armado 
+
+aseguraremos la zona para que puedas entrar espera entendido TV escaneo objetivos con un guardia armado encontremos a este hijo de puta un camión sale de los establos va hacia el oeste copiado bebé sigue ese vehículo el camión va al 
+
+suroeste por el camino de tierra veo desconocidos más adelante parecen más granjeros esperen ves que estén armados negativo Sin armas sin guardias recibido sigue escaneando el camión se detuvo en el camino Sábado 1 tenemos objetivos en 
+
+el invernadero a nuestro Noroeste marcándolo 07 no hay señal del objetivo Cuáles son las órdenes este convoy militar gana terreno entramos abriendo fuego ojalá se asuste y ahí lo atrapamos ataca al exterior despejaremos los edificios 
+
+cuando sea seguro 07 recibido manténganse agachados a todos los shadows pueden hacer contactos solo con personal armado no habrán fuego en edificios solo personal armado usa el 25 milímetros para minimizar daño colateral Quiero música 
+
+para mis oídos continuamos autorizados a hacer contactos a todos los shadows disparen [Música] directo no abran fuego en edificios [Música] tenemos más personal en la zona sin movimiento 07 objetivos visibles derivados cambio Shadow 1 
+
+de copio despejaremos los establos primero marcando ahora veo el objetivo 07 copio tu marcador puedes proceder Shadow 1 nos movemos avísanos si el objetivo se mueve Shadow uno copia congela el flanco derecho sí entrando al suelo al 
+
+suelo este territorio de las almas discos atentos a hostiles en fuga hay desconocidos saliendo de los estatutos buscan hassan veo una mujer y a un niño ahí abajo andando al disparar digo personal armado entendido no disparen a civiles 
+
+negativos se acercan múltiples vehículos por el sur personal enemigo se mueven los establos sal del edificio ve al norte Ahora sí avanzamos despejado derriba ya ese maldito edificio pero siéntete te copio peligro cercano ve autorizado 
+
+40 milímetros Arriba ese maldito edificio eh ataca este edificio ahora pasamos al oeste con los invernadero más personal en el invernadero todas las estaciones hay personal armado en el invernadero contacto cuidado todas las estaciones 
+
+hay personal armado en el invernadero contacto cuidado al disparar casán podría estar dentro bebé puedes ver el interior del edificio todas las estaciones hay personal armado en el invernadero contacto cuidado al disparar hasán podría 
+
+estar dentro bebé puedes ver el interior del edificio afirmativo espera disparar cuidado al disparar [Aplausos] o ataquen a los edificios [Música] el objetivo no está la vista parece personal armado vamos a abrir fuego en el invernadero 
+
+puedes derribar el invernadero uno nos movemos encendidos 07 Estos tipos están jodidos de caballos dónde está este imbécil tiene que estar en esta complejo Shadow uno en cuanto llega a ese convoy 07 del 6 clics recomiendo apresurarse y 
+
+asegurar la extracción contaré a Rodolfo estamos trabajando en la extracción atento asaltaremos el complejo al último me copias movimiento en el complejo equipo 07 recibido mantén tu posición hasta despejar la zona entendido cada uno 
+
+soldados a la vista RPG mierda Sí todo duro hay rangos en la torre de agua el canal enemigo avanza rápidamente ojos sobre ellos [Aplausos] buen impacto le dieron una cosa buenos zapatos tenemos una vaca que juego alrededor de nuestros 
+
+chicos se pasa el infierno efecto en el objetivo buen disparo [Aplausos] buenos disparos [Música] buen ataque atentos a movimiento despejado no hay movimiento cuál es tu situación estará bien procedamos eso es que bueno que tu puntería 
+
+no sea una mierda como la suya entendido 07 atentos el camino al complejo está despejado pero la puerta se encuentra bloqueada te copió nos das una entrada abriremos la puerta esperen se vea arroja un misil o un 40 milímetros en esa 
+
+puerta al ataque 25 no le hace una mierda ataca la puerta con un misil o con un 40 milímetros buen efecto logrado No usted está abierto puedes proceder copiado avanzando ahora Ghost no detecto movimiento de copio avanzamos a la entrada 
+
+ahora entendido Los vemos atentos el convoy está a tres clics muevan estos culos todo claro Alejandro dónde está esta extracción a 5 minutos Será peligroso entonces sacamos lo entrando no están identificados hacia arriba sale del primer 
+
+piso lado noroeste identificamos al objetivo sí Ese es catán más personal Enemigo en el patio acaben con ellos tenemos confirmación avanzamos hacia él fuego lejos de los edificios corrió adentro pero siete recibidos te cubrimos el 
+
+objetivo ingreso edificio suroeste segundo piso nuestros chicos pueden comer los cubiertos directos al suelo ahora quién carajos son fuerzas especiales mexicanas vienes con nosotros a todos los árboles se está acercando repito cinco 
+
+objetivos asegurado 07 todo claro Cuál es el estado de tu extracción aquí sólo uno dos minutos están con el cartel podemos atacar Shadow de copias afirmativo a todos los Shadow el Ejército mexicano se considera hostil bebé tiene permiso 
+
+para atacar al convoy meter lanzado [Aplausos] [Música] no le hace una mierda ataca la puerta con un misilo con un 40 milímetros [Aplausos] enviando uno [Música] no hay movimiento en la zona a todas las estaciones los objetivos visibles 
+
+cayeron pueden proceder la extracción está en camino la extracción podría haber resistencia tenemos apoyo aéreo podemos hacerlo todo bien Vamos uno porque te has aceptado estamos regresando a la base sin dudas ni titubeos así es como se 
+
+hace Shadow saben que eso me encanta Quiero hablar con el general listo comandante Hazme feliz lo atrapamos lo estamos llevando a la base en este momento acercándonos a un poblado al norte tripulación en espera atención a nuestros 
+
+aliados pararon en el camino todas las estaciones qué tanto esperan Shadow uno hay movimiento en la estación de combustible de adelante probablemente es el cartel marcando copiado reconoceremos el área estén listos TV comprueba la 
+
+gasolinería de ahí ahora tengo visual haz un acercamiento a esa gasolinería copiado objetivo marcado múltiples desconocidos en el área busquemos armas veamos si el Cartel Busca problemas no ha visto armas objetivos sin identificar al 
+
+sur de la gasolinería parece un mercado afirmativo estamos listos hay Rastros de los hostiles negativo según vemos Esta despejado llevemos este show a la carretera estaciones no hay amenazas visibles en el área ya pueden proceder sábado 
+
+uno copiado avanzaremos Rodolfo avancemos el equipo terrestre se desplaza cúbranlos hay un individuo cruzando la carretera qué carajo está haciendo uno creo que tenemos una situación fuera de mi camino poder vehículo Aliado impactado 
+
+están en la intersección bueno fuera fuera cuidado al disparar cuidado al disparar personal es una maldita emboscada TV Dale al gatillo protege a los nuestros parece que nuestros aliados están viendo estamos con peligros cercanos ten 
+
+informes cuando juegan uno listo asegurado 07 copiado Coronel Vargas reporte de situación Shadow uno nos atrincheraremos en el edificio de atrás cambio entendido el movimiento los aliados están avanzando al restaurante Pon un marcador 
+
+en este edificio directo despejado cuidado al disparar hay civiles saliendo de la zona bien por ellos se largan de esta tierra aliados avistados en las ofrendas del restaurante Rodolfo solicita los helicópteros entendido me copian había 
+
+Víctor 31 Solicito extracción inmediata mi posición actual es la azotea del restaurante revisen el este hay movimiento en la colina [Música] cada uno estamos bajo fuego de herpes del este marcando RPG recibido atacando [Aplausos] parte 
+
+de la iglesia copiado en la iglesia TV ataca a esos del Cartel pero no dispares a la iglesia podría haber civiles adentro RPG abatido gadge 31 en camino en cinco minutos todas las estaciones las naves de extracción ya vienen cinco 
+
+minutos [Música] buen ataque [Música] RPG abatido cartel ahí en la gasolinería vehículos en camino desde el noreste cerca del cementerio estoy bajo fuego recargando directo enemigos en la escuela tú me están superando no puedo 
+
+detenerlos buenos el cartel se mueve cerca de la gasolinería atención a los movimientos un infarto no veo un movimiento Shadow uno habrá 207 toda amenaza a la vista fue neutralizada atención reabastecimientos bajos Sargento situación 
+
+cazan fue asegurado sigue siendo odioso Y tú eres tan idiota como tus armas de guerra Bravo 71 tienes autorización para cerrarle la boca a hassan todos los shadows tenemos vehículos en camino en el campo de fútbol al suroeste equipo de 
+
+mortero abatido efecto en el objetivo enemigos al suroeste permiso para atacar a todos veo el equipo antiaéreo al este del campo de fútbol personal del ejército moviéndose en el noreste ahora [Música] [Música] más del Carmen en la 
+
+escuela eso es cartel cerca de la escuela estoy bajo fuego fuego evolución a un minuto enemigos junto a la escuela hay vehículos militares moviéndose por el campo de fútbol justo ahora helicóptero en camino desde el suroeste copiado 
+
+están atacando con todo lo que tienen mierda acabaremos con la corrupción en una sola tarde se queda poca munición me quedo sin munición cuchillos listos moriremos fijación de la carretera donde están atacando desde el punto disparar 
+
+maldiciones armas listas en camino entrando esperen tenerlos perfecto en el objetivo a todas las unidades habla puedo ver un equipo antiaéreo al oeste de la escuela cuando sacamos desde el suroeste estamos a 30 segundos equipo antiaéreo 
+
+destruido h31 Shadow uno aquí copiado las fuerzas aliadas están en la azoteada del restaurante zona de aterrizaje activa nos mantendremos en posición para proporcionar cobertura copiado entendido llegaremos ya tres uno fuera extracción 
+
+en 30 segundos recibido tenemos un equipo antiaéreo cerca del Norte El último cargador el misil nos tiene como objetivo otra medida abatir a su equipo antiaéreo nuestra salida está bloqueada por los blindados enemigos Solicito apoyo 
+
+aéreo inmediato TV ataca a todos esos vehículos cuando se van a dar cuenta estos idiotas que jasam vendrá con nosotros al norte un blindado atravesando el puente donde están apuntando armas de fuego pequeñas habitadas en la gasolinería 
+
+cada uno h31 estamos en la estación tres uno copiado la zona de aterrizajes esperamos 0 10 de la extracción está en posición sal por el oesterando sábado uno te copio vamos a avanzar Gracias al cielo recibido dados 07 zona de aterrizaje 
+
+asegurada puede seguir copio avanzando ahora entren todos Esto será un mensaje para el cartel no sin duda hermano hoy no solo perdieron unos soldados sin algo más Qué cosas su reputación los chismes son rápidos en las almas tres uno 
+
+todo listo cada uno hace tres uno todo el personal y carga asegurado estamos regresando a [Aplausos] todos los shadows en marcha de rodillas tienen una imagen Clara Así es los tengo bien estamos listos vamos sabes hablar árabe no lo 
+
+sabía entonces voy a tener que hablar con maldito inglés medieval porque ustedes son unos perros incultos ya veo que estamos empezando mal aquí Jaja estás ante un oficial de la fuerza eres comandante de una organización terrorista 
+
+foránea podría decir lo mismo de ti qué planeas comandante te planeaban al enviar misiles a mi tierra diría que para patearles el trasero que boca tan insolente y vulgar ya aprenderás a respetarme cuando tu nación esté en llamas estás 
+
+vinculado a un cartel si desaparecieras nadie sabría dónde Buscar tus restos no me cabe la menor duda de que te gustaría torturarme los misiles no me importa de dónde vienen Quiero saber a dónde van [Música] Mira alrededor aquí serás 
+
+parte de la cadena alimenticia O puedes hablar soy un rey esto es ilegal eres prisionero de guerra Mira no está en guerra con México no he roto la ley estos hombres y sus comandantes son los infractores tú y tu amado general cobran su 
+
+nombre no ejecutaron y van a pagar por eso Ahora solo Dios podrá ayudarlos quiero a este bastardo en custodia permanente de lo contrario Tres metros bajo tierra matar a hassan es un acto bélico y encerrarlo es ilegal por ahora debemos 
+
+Dime que estás consiguiendo algo de utilidad general déjeme acabar con esto no hay nada que me gustaría más pero las güey tiene razón siempre pruebas Tendremos que soltarlo veamos a donde nos lleva está justo ahí hablan en serio sacamos 
+
+algo útil de su teléfono afirmativo encontramos algo bien Ahora [Música] [Aplausos] [Música] los datos hackeados del teléfono de hassan en México pasaron por una torre celular en la costa española casan se comunicaba con alguien de allá 
+
+cuando lo atrapamos las señales llevan a un criadero que el cartel usa de fachada de contrabando es remoto y está en el agua perfecto tenemos que llegar al lugar y ver si ahí están los misiles las imágenes muestran al menos cuatro 
+
+estructuras y un faro no podemos ver dentro pero hay muchos guardias del Cartel es perfecto para ocultarse con el equipo correcto a camuflarse Exacto vigilaré la actividad en la costa y preparar el extra [Música] Así que mantengamos un 
+
+perfil bajo es un reconocimiento autorizado por fuego sin registrarse [Música] uno a Bravo en posición a medio kilómetro de la costa estructuras visibles cuál es tu situación en el punto de ataque hay dos objetivos armados y ocultos en 
+
+la vida tienen luz verde para ejecutarlos 200 metros conmigo Bravo que tiene Bravo me copias [Música] buen trabajo avanzan y vean que encuentran veo patrullas móviles y un equipo terrestre adelante un solo miras Sargento veamos que nos 
+
+espera ya los veo cartel era de esperarse veamos de qué quieren alejarnos fijado al pastor No necesitamos enfrentarnos Pues será Bravo cómo vamos chicos el marcha hay guardias del cartel en el campo ven algo que pueda tener un misil 
+
+dentro negativo entendido sigan presionando fuera izquierda Usa tu mira térmica los tengo acaba con uno me encargo del otro [Música] directo eso avancemos Quédate cerca Bravo Aquí Cuál es el estado copiado llega la línea de árboles 
+
+frente a tu posición te daré algo de cobertura vehículos en camino hay transportes moviéndose al norte de nuestra posición uno lleva un contenedor Tal vez tenga los misiles por eso estamos aquí avanzaré por la costa para tener una mejor 
+
+vista no lo pierdas el camino para cruzar al otro lado carteles y terroristas aliados insólitos no que tienen en común vamos atraen a la juventud siempre hay fila de reclutas nuevos agáchate y no llames la atención movimientos se 
+
+acercan patrulla pequeña adelante esconde el arma gas intenta anticipar sus trayectorias si tienes que maniobrar Hazlo despacio y con calma nada de movimientos rápidos No muevas la cabeza pasarán muy cerca [Música] te escucho adelante 
+
+adelante [Música] [Música] espera hay dos más observalos con la vida térmica [Música] Alguna novedad estamos bien hombre tengo visual acaba con él voy por el otro a descansar tiros limpios ya podemos movernos [Música] gas estructura al 
+
+frente no hay nadie afuera hombres dentro quizás [Música] Usa tu sensor de proximidad para ver si el edificio está despejado despejado nada adentro entendido sigamos avanzando [Música] parece que se detuvieron para hablar no hay 
+
+
+necesidad de atacar podemos pasar sin ser detectados [Música] siguen camino no lo veo veo yo lo vigilaré sigamos avanzando límite del Bosque adelante vamos los árboles nos darán mejor cobertura Pero sigue abierta el camión con 
+
+contenedor acaba de entrar parece que lo están cargando en el almacén hay mucho personal armado cerca copiado Háblame Garrix es bueno estar de regreso vamos nuestros objetivos conocidos posibles y sospechosos es todo compartiría una 
+
+trinchera con ustedes dos sin pensarlo ahora arreglemos esto estos misiles le da una ciudad morir a mucha gente una línea visual el edificio principal si los misiles están aquí quizás estén dentro vamos por las turbinas eólicas y 
+
+acercándonos van a llegar por los edificios principales Los grandes de arriba de la Colina aprovechemos que hay niebla eso y los trajes nos mantendrán ocultos visual en el edificio principal 400 metros a la una recibido Busca un sitio 
+
+en el pasto veamos quién está en casa usa la mira y observa la zona mierda capitán entorno con muchos objetivos afirmativo cartel por todos lados no dispares no ataques hasta que obtenga la distancia todo listo bien copiado en marcha 
+
+señor cuando quieras está solo compensa cuatro marcas por la caída de bala [Música] lo eliminé buen tiro atención no podemos dejar que lleguen a los cuerpos de la otra patrulla solo es él tres marcas y media para la caída de La bala 
+
+[Música] se abrió una vacante en el cartel ya cayó está solo tres marcas y media lo tengo el cartel las almas está contratando solo es él tres marcas y media en el blanco va al día para hacer está solo tres marcas y media un accidente 
+
+laboral estuvo bien solo es él tres marcas dulces sueños otro narco muerto otros dos pueden verlo intenta moverte un lugar donde puedas eliminar a dos con una sola bala son civiles no están armados Por qué mierda y civiles aquí es un 
+
+criadero activo Alguien tiene que alimentar a los peces está solo dos marcas y media es una desgracia mal día en el trabajo tengo a su amigo tres marcas [Música] lo acabé Somos buenos en esto emitidalo su colega es mío dos marcas y 
+
+media [Música] [Aplausos] abatido y los limpios solo es él tres marcas [Música] temporada de sicarios acaba con ese yo con el otro tres marcas adentro eso estás apuntando otros dos lo tienen a la vista cambio de posición para 
+
+eliminarlos con una sola bala [Música] estoy listo eliminado el explorador sigue valiendo la pena está a la vista de otros dos Puedes cambiar tu posición y eliminarlos de un solo tirón [Música] [Aplausos] [Música] [Aplausos] [Música] 
+
+qué tal si tenemos más cuidado eliminados de un solo tío yo me encargo del otro 4 marcas [Música] [Aplausos] un accidente laboral cuando digas tres marcas y media [Música] es una desgracia hora de ir y encontrar una forma de entrar te 
+
+cubriré desde aquí vayamos juntos dos son mejor que uno no señor necesitas Ok copiado y entendido señor están entre estas estructuras esperemos que sea lo segundo Ya llegaste Sargento maldita Es un camino largo hay vehículos moviéndose 
+
+hacia ti desde atrás del edificio parece que no te han visto con calma esconde el arma gas está saliendo de los vehículos puedes evadirlo si no te mueves Si buscas un tiroteo lo vas a encontrar lleva la armadura dispara la cabeza si nos 
+
+enfrentas [Música] [Música] Gracias por la ayuda capital estás haciendo lo difícil lo notaste Bravo estamos entrenando señor bien parece que está despejado para que cruces y busques una entrada entendido en camino varias puertas 
+
+abiertas por el edificio principal por la puerta tenemos que saber si hay misiles en estas estructuras maldita [Aplausos] estoy viendo varias opciones para entrar Sargento miles y necesitas ayuda dime irrupción explosiva ataca por los 
+
+tragaluces y Lázaro por los ductos de ventilación para que salgan copiado Ya estoy en eso esos tragaluces deberían darte la ventaja tal cual no era ventilación cuidan como ratas puede ayudar a vigilarlos desde aquí mirador caído 
+
+[Aplausos] mirador caído [Aplausos] las almas mundo [Aplausos] atención imbécil almacén despejado el interior del contenedor revisalo a inspección el almacén por seis señales de los misiles de hassan ve que hay en el contenedor Sargento 
+
+madre mía esto es un puesto de Avanzada del cartel que es lo que ves una tonelada de drogas el almacén está lleno de armas píldoras materia prima si los misiles están aquí debemos encontrarlos acercándose desde el otro edificio Parece 
+
+que son cinco en total sugiero el sensor de proximidad y dar estilos a la cabeza con tu fusil de precisión con silenciador ya van dos cuatro [Aplausos] parece que sabes contar señor solo me río un poco capitán Sí señora estoy libre del 
+
+cartel dice en el siguiente edificio mismo procedimiento usar los tragaluces en la ventilación para hacerlos correr [Aplausos] [Música] [Música] Ahí va una granada [Aplausos] [Aplausos] [Aplausos] [Aplausos] otro cargador [Aplausos] 
+
+otro trabajo [Aplausos] [Música] [Aplausos] el criadero está despejado no hay contenedores que puedan tener misiles entendido qué carajos este lugar apesta mierda encontré algo que es una representación esquemática este lugar es más 
+
+complejo de lo que parecía hay túneles debajo del faro encontrémonos afuera entendido conmigo chicos avancemos somos un equipo pequeño se llaman refuerzos externos nos irá muy mal muy rápido de hecho ni deberíamos estar aquí si así 
+
+fuera seríamos más personas hay que asumir que el cartel alertó a todas las fuerzas de la zona esperemos una fuerte resistencia más adelante entre la niebla Y estos trajes nunca nos hubieran llegar francotirador explorador esto nunca se 
+
+te olvida cantar Bravo watcher vemos la base del paro nos instalaremos aquí usará el área llevan armadura dispara la cabeza si nos enfrentas tenemos que despejar el área objetivo y avanzar está solo dos marcas directo atención no 
+
+podemos dejar que lleguen a los cuerpos de la otra patrulla [Música] está solo dos marcas y media [Música] a descansar retiro anticipado [Música] dos marcas y abatido buen disparo está solo dos marcas y media escucha mi marca de 
+
+distancia y sigue tu objetivo si se está muriendo está solo dos marcas y media esperanza están entrando para cubrirse atención a las ventanas tirador caído señor están devolviendo fuego tengamos la calma y la posición es inútil no nos 
+
+ven el cartel dispara pero no pueden vernos avanza a la base del paro Yo Te cubro Desde acá mi turno otra vez señor lo hiciste también la primera vez hacia las estructuras del faro copiado Esto está haciendo tu cardio del día acá hay 
+
+movimiento en el camino de adelante se están deteniendo y saliendo del vehículo esconde [Música] [Aplausos] [Música] [Aplausos] [Música] Estos tipos no son del cartel afirmativo hablan en árabe [Música] no lo sé [Música] [Música] 
+
+[Música] [Música] [Música] [Música] [Aplausos] [Música] [Música] [Música] [Música] [Aplausos] [Música] [Aplausos] [Música] [Aplausos] [Música] [Aplausos] [Música] [Aplausos] [Aplausos] estuvo muy cerca copiado deben ser de alcatala 
+
+hombres dejan fijastán tiene soldados aquí es porque algo está pasando hay varios edificios exteriores cerca del faro revísalos [Música] [Música] tiros en la azotea Cúbreme ntó [Música] azotea [Aplausos] está abierta [Aplausos] la 
+
+mierda aquí vienen [Aplausos] acá en el cielo idiota [Música] [Aplausos] [Aplausos] [Música] necesito munición interior despejado necesitas despejar ese garaje y reportar lo que hay en él antes he entendido [Música] [Aplausos] 
+
+[Aplausos] despeja esos edificios [Aplausos] garaje despejado [Música] encontré algo suministros y cajas es todo ruso no tiene nada vaciadas Hace poco tú [Música] recibido Busca Cómo entrar en los túneles podrían estar tras algo en las 
+
+paredes u ocultos en el piso encuentran la entrada chicos [Aplausos] sigue buscando Me parece que encontré algo aquí capitán lo empujo que hoy te encontramos buen trabajo atención hay varios botes acercándose a mi posición necesitas 
+
+ayuda podrían ser pesca Dores a los carteles les encantan Ojalá pudiera decir lo mismo los mayores primero capitán parecen extensos debe llevar al agua Okay está bien los túneles hacia la costa estás bien los botes Aún se acercan sin 
+
+peligro aún no me gusta esto es parte del trabajo no deberías estar sola no estoy sola Tengo armas y sé usarlo fuera todo libre fin del camino Mira esto un submarino Maldita Sea los carteles los usan para transporte suficientemente 
+
+grande para un misil Pues apenas no podrías cruzar el Atlántico en ese cacharro Kate estamos en una cueva cerca de la costa no hay personal ni misiles entendido estoy justo enfrente creo que estoy en problemas yo entendido Qué sucede 
+
+tienen armas se pudrió voy a atacar carajo están abordando mierda qué carajos no puedo ver qué está pasando Quítame tus putas manos la atraparon se llevaron a la escuela debemos alejarnos de hablar hay que recuperar a la escuela andando 
+
+[Música] es una prueba de vida de dónde salió desde cuándo desde ahora no podemos mandar a la caballería así de fácil requiere planeación se necesita precisión y violencia yo puedo hacer ambas la vida de Kate está en peligro sé que 
+
+estás alterado capitán esto pasó durante Tu misión y sé que es difícil para ti [Música] estás diciendo que la dejemos que no te puedo ayudar la voy a traer en 12 horas bueno querría eso yo tampoco Generalmente amigos solo enemigos buena 
+
+suerte nos enfrentaremos en su territorio habrá miles custodiando a la escuela Quiero un ejército puedo conseguir uno hacia dónde [Música] estoy plátano alemán [Música] vienen hacia nuestra posición entendido en la zona de aterrizaje 
+
+francotirador llevaré al equipo del punto de control entendido acabémoslos Hola viejo Gracias por la ayuda tenemos un enemigo en común Ya están listos [Música] los veo más adelante atención vamos el camino sí luz verde todas las 
+
+unidades probando acaba de pasar junto a nosotros estaremos justo detrás de ellos para cubrirte no lo tenemos una oportunidad para rescatar a naswell entendido En qué vehículo está al catarla la tienen una camioneta negra cerca de la 
+
+parte de adelante del convoy atacaremos los vehículos escolta primero luego aseguramos pueda llegar a la frontera cuidado al disparar hay civiles en la carretera a todas las unidades armas vistas soldados avances ya saben que estamos 
+
+haciendo siguen avanzando los camiones de Alcalá adelante tengan cuidado con los disparos a la camioneta viejos tiempos capitán hermanos ataque en el siguiente vehículo sea más de Alcalá dos camiones más adelante cuál es tu situación ya 
+
+se cayó que dijiste el sargento lo perdimos no estoy muerto ahí que estoy colgando de una maldita cuerda de todo lo que puedo hacer tendrás que tratarte juega con base para que tú y te está alejando tenemos que avanzar porque se detiene 
+
+a todas las unidades conseguir un vehículos contando enemigos y avanza hasta las algunos de mis soldados están contigo sargentos entendido cuál es tu posición me estás acercando a un camión Aliado solo soldados se para entendido les 
+
+dieron a los compañeros de Zara vinimos a luchar Sargento concéntrate en el enemigo y ve por la web dicho que ves ametralladora ligera adelante [Aplausos] [Música] más camiones de Alcalá el convoy se dirige al norte piernas vamos hacia 
+
+allá Mis localizadores informan sobre un bloqueo de Alcalá adelante cuidado hay una situación en el camino qué rayos es esto en la carretera son civiles Por esto yo traigo los fósforos [Música] De dónde salen Tantas dudas de un camión 
+
+adelante de su posición Por qué se detiene [Música] tenemos que encargarnos de ese camión con la esquina entendido se acabaron los Minas [Música] bien a todas las unidades Cuál es su situación de carga tu seis y voy a pasar me acabo de 
+
+pasar el bloqueo capitán tiene refuerzo necesitarás más armas subes argento vamos Qué bueno verte entero utiliza lanzagranadas Sargento el lanzagranadas es para ti tómalo [Música] muy bien Qué información hay eso estamos acercando están 
+
+cambiando su táctica cómo nos estábamos persiguiendo ahora Ellos nos seguirán Quiero ver quesos lo intenten detrás nuestro estamos todos acabemos con esto viene hacia aquí tratarán de acorralarnos No si podemos evitarlo con el alzador 
+
+copiado estoy en eso impacto directo te adora a la derecha metralladora acabes con el desgraciado capitán el convoy se decía a la izquierda hacia la frontera cuidado por la espalda acábalos no te alejes estamos contigo parte trasero 
+
+despejada afirmativo capital pero hay muchísimos soldados eso nos encargamos nosotros solo no la pierdas Nick 6 fuera tenemos que separarnos gas consigue un vehículo nos atacaremos desde todos los ángulos posibles con otro vehículo gas 
+
+tenemos que separarnos [Música] y tienen amigos de quién es sargento acaba con el sargento [Aplausos] cayó adelante a todas las posiciones al català despliega drones Cómo obtuvo el Catalán ladrones cuidado cuidado piloto del dron caído 
+
+atentos blindado Enemigo en camino no tenemos lo suficiente para eliminar un blindador avanza cuando estés listo a traer los disparos para que puedas subirte copiado [Música] en mi posición bien blindado coloca una carga y sal de ahí 
+
+sargento torcalista a la izquierda salta salta te copio de la frontera por ahí bloqueados por el helicóptero en eso en capital camioneta negra todo despejado es una reunión familiar no me la perdería para bien hecho las vueltas también 
+
+todos ustedes estamos en el alma debemos llegar a un lugar seguro vamos tienes razón Yo iré primero ustedes defiendan la frontera Hasta pronto capitán esto es mi culpa nunca estoy bien tenemos otros problemas Y ahora dónde están Están 
+
+en los misiles y además deja San solo hay una persona que sabe dónde hallarlos la casa del Sin nombre no uno de sus lugares un Teniente narco exacto no será fácil mis Fuentes me informan que los VIP de las almas estarán ahí esta noche 
+
+algunos invitados otros obligados de nosotros las almas se quema y hay que saber Quién inició el incendio el Sin nombre estará ahí No no es seguro pero es una oportunidad hay que tomarla Tengo suficiente shadows aquí para controlar el 
+
+país prefiero que no lo hagas una casa no será problema necesitamos al Sin nombre vivo bueno Tendremos que verlo como Dale lo que quiera información quieres saber quién está aquí digamosle en persona correcto infiltra uno de nosotros 
+
+que encuentra el jefe y lo atrape yo lo haré si entras ahí te matará mi hermano me voy a arriesgar vivimos a detener un misil así que hagámoslo dar información a cambio de ver al Sin nombre si está ahí atacamos Órale Tienes huevos 
+
+cabrón si logras entrar necesitarás ayuda te acompaño yo me quedo a vigilar sado rodea el objetivo en un helicóptero entendido van a querer alguna prueba muéstrales esto ten cuidado ahí muy bien manos a la obra estoy listo hay espacio 
+
+para bajar en la azotea veo a dos armados en la puerta principal Alejandro cómo vas hay un vaquero dentro Cómo haces eso violentamente Veo veo el momento lo ven ahora sí se lo están llevando el chico es bueno ojalá [Música] hermano 
+
+Alejandro cómo lo no hay tiempo escucha tales información de la buena No mientas y diles todo lo que quieras saber o te matarán les digo todo todo todo las fuerzas mexicanas Los mercenarios estadounidenses los shadows toda la verdad 
+
+también tu nombre es este sí señor tienes nombre gallito me dicen qué pinche nombre es ese de Soup Ándale Quiero ver a él sin nombre qué quiere ver al jefe no más estás vivo porque puedes tener información más vale que sea algo bueno 
+
+bueno o te arrancaré esos pelos de mierda de la cabeza sal de mi pinche elevador Esta es mi casa cocina no verás al jefe Hasta que yo lo diga te callas A menos que se te hable y lo más importante di la pinche verdad Porque si mientes 
+
+serás la comida de mis perros qué chingados estás haciendo Llevo días sin dormir el jefe dijo que cero drogas Diego ya sé pero es solo para estar al 100 las putas órdenes a ver si el dolor te despierta vuelve al trabajo las almas están 
+
+en guerra Quieres ganar no desobedezcas así sobreviven la organización y por eso ha venido el jefe esta noche el Sin nombre está aquí no el Sin nombre no su sicaria personal Valeria aquí hay otro un gringo y este quién es se llama sol 
+
+él nos buscó No mames y lo trajiste para acá así nomás dice que tiene información pendejo de mierda no tenemos ni puta idea de quién es este güey y ya nos dio la cara Valeria necesitamos información podría ayudar Más te vale que nos dé 
+
+algo porque sino luego de que mates este vato El que va esta silla eres tú niños esto es fácil yo pregunto ustedes responden la verdad no me mientan hace poco estábamos protegiendo a un amigo en las montañas alguien nos atacó ahí quién 
+
+era [Música] fue todo te arrepentirás yo creo que fue el cartel rival más quien nos atacó [Música] no fue un cartel sino las fuerzas especiales mexicanas encontramos los cuerpos fuerzas especiales Entonces cómo sabría un externo que 
+
+eran las fuerzas especiales mexicanas y no ustedes tal vez estaba ahí tú estabas ahí pendejo tal vez él también había externos ayudando a las fuerzas especiales mexicanas quiénes eran escuchamos gritar algo en inglés estaban con los 
+
+gringos como él [Música] estadounidenses un grupo llamado compañía Shadow los vaqueros están trabajando con mercenarios güey esas putas víboras ves tenía razón fueron los gringos la compañía que existe estúpido como sé que es cierto tú 
+
+qué dices Qué pruebas tienes Revisa mi bolsillo [Música] Qué es eso la insignia de la compañía [Música] quién dirige la compañía nombres reales no En clave Y ese quién es no me suena este tal graves qué está buscando quiere los misiles 
+
+que están moviendo Cómo se enteró de eso no se puede confiar en él no puedes hazme caso nos has dicho ni verga idiota te pagamos bien y el extranjero sabe más que tú hora de matar a este culero inútil será un clásico Qué bonito te vi 
+
+bien ahí bien hecho ahora sí a cambiarle iremos arriba vamos güero que te quede claro no hemos terminado cabrón el Sin nombre decidirá tu futuro más les vale ponerse a trabajar pendejos Ándale por aquí cabrón los vaqueros se vuelven 
+
+Rápido Yo voy a estar en el Penthouse con el Sin nombre cuando veré a él sin nombre Valeria hablará con el jefe tú espera con los demás creo que el nombre estará muy interesado en hablar aquí te vas a esperar show estaré en la ofrenda 
+
+no me interrumpan sí jefe me encargo de él güey se necesitan afuera bien hay que darle una máscara Y vigilarlo estás vivo Alejandro tú también el Sin nombre está en el Penthouse tercer piso necesitamos una tarjeta Diego la tiene toma 
+
+esto genial una máscara hay gente que no debe ser vista con el cartel comunicación lista te copio Ya estás Vamos entramos que tienes el Sin nombre está en el Penthouse tercer piso hay que ir por el elevador necesitamos la tarjeta de 
+
+Diego Dónde está Diego la ofrenda segundo piso ves algo Teniente si encuentras un acceso a la azotea puedes llegar al Penthouse Subiré De cualquier manera cuidado hermano puedo ayudarte dispararán en el acto que hay en el garaje ni idea 
+
+pero es importante para Diego encuentra el Sin nombre terminemos con esto fuera Alguna novedad zona segura entendido mantentes al hombre fuera el Sin nombre tiene alguna respuesta ya sabemos quién organizó esto todavía Nadie puede pasar 
+
+por aquí [Música] Sí es en serio número de cuenta 0919 estamos bien hombre control uno quieres morir de un balazo aquí transfiere el dinero Esta es una zona restringida los guardias disparan en el acto [Música] tomé una botella Útil 
+
+para distraer guardias estoy en el segundo piso Diego está en la ofrenda está en algún lugar de este piso copiado [Música] encontré el cuarto de Diego tal vez maldita sea por aquí encontré una botella solo quiero explicarles encontré un 
+
+cuchillo arrojadizo genial eso ayudará a que no te detecten ese avión encontré a Diego entendido cabrones hay mer cenarios otra puta ciudad es un llama a los jefes no podemos dejar que nos quiten nadie en cada Fuente empecemos allá 
+
+arriba despejemos el área Mira te tengo un trabajo Llámame rápido cuidado alguien está viendo a ese tipo el del House está en la esquina Norte encontré un arma cuidado hermano se hace ruido todo el lugar va a casarnos ya saben que estoy 
+
+aquí el primer piso está tranquilo lo están conteniendo hoy algo revisaré esta zona este es malo el Sin nombre está en el Penthouse esquina Norte [Música] puedes operar el elevador hay que averiguarlo revisa el pensador subiendo bájanos 
+
+debemos Acceder al tercer piso bajando bajamos estaremos Acceder al servicio pero ahí poner bloqueo de emergencia oprime el bloqueo de emergencia para abajo alto vamos vamos arriba Gracias ahí abajo sube puerta abierta equipos nos 
+
+movemos al Penthouse esperen Qué haces ahí abajo sube solo disparas si es totalmente necesario puesto de seguridad más adelante cómo pasamos confía en mí identificación c4 tengo el próximo visitante para el jefe entra aquí fibroscopio 
+
+listo hora de identificar al Sin nombre Ponle un rostro al Sin nombre el cargamento de España llegó Justo a tiempo puedo asegurarle que mis hombres cumplirán el acuerdo y los paquetes Sin nombre lista para otro visitante buen viaje muy 
+
+bien empecemos no puede ser la sicaria que vi abajo Valeria ella es el Sin nombre Valeria Está seguro hermano No dejes que escape cabrón el tiempo en tierra pueden avanzar el Sin nombre me llamo Valeria oculta plena vista oculta estoy 
+
+en todas partes soldado bien Igual nosotros vamos hermano Qué pasa Valeria la conozco Siéntate ustedes porque se conocen No usaría la palabra conocer las palabras son muy importantes nuestra palabra es nuestro valor No hija de puta que 
+
+me voy a matar calmado comandante vamos responde ya no recibo órdenes Hasta los perros de las almas saben que no pueden ladrarme es una ex militar fuimos compañeros distintos escuadrones misma unidad eran los salvajes los vaqueros mi 
+
+escuadrón era impecable señoras y señores hasta el ataque al hijo de la araña te acuerdas de acuerdo perfecto recibió órdenes de cerrar la ciudad y dejar fuera los matones de la araña para no derramar sangre fue justo lo que hicimos 
+
+mantuvieron fuera sus matones Porque eran ustedes los escoltamos de las montañas sin problemas también para evitar la violencia se suponía que iría a prisión lo mataste y te quedaste supuesto creé una nueva vacante y yo la ocupé las 
+
+almas me necesitan las almas Busca soldados no sicarios Pero tú deshonras al ejército y a tus hermanos no porque haces esto Dímelo tú tú tienes el contrato no si no lo haces la competencia lo hará eres una narco y refugias un terrorista 
+
+el terrorismo es bueno para el negocio es un seguro qué chingados significa eso te puede [Música] sacarla guerra contra el terror no habrá ninguna guerra contra las drogas para encontrar a lo que llamas terrorista y tus misiles 
+
+necesitas demás para evitar la sangre No seré parte de esto eso no cambia las cosas no cambia todo carajo No hagan tratos con ella no saldrá bien [Música] parece que es tu turno de decir la verdad Quiero los misiles Quiero el objetivo y 
+
+quiero hassan tienes 10 segundos de lo contrario te mostraré la diferencia entre el ejército y yo no conozco los objetivos soy una mensajera transporte cosas puedo decirles Dónde encontrar los misiles cuando vuelvan les diré Dónde está 
+
+hassan a cambio me van a dejar ir y van a alargarse de las almas se me largan ya [Música] Trato hecho hasta entonces aquí te quedas más coordenadas del interrogatorio confirman una plataforma a 400 millas náuticas de la costa en el 
+
+golfo de México la plataforma ya no está activa y ahora la está usando el cartel como punto de contrabando un barco de carga ancla a 500 metros al noroeste la vigilancia vio el transporte de un gran contenedor del barco a la plataforma 
+
+ese contenedor ya se encuentra en la plataforma creemos que es el misil a 141 el coronel Vargas y la compañía Shadow formarán tres equipos en bote para aniquilar ambos objetivos a la vez Ghost liderará el equipo de asalto al barco waves 
+
+y Alejandro asaltará la plataforma y desarmará del cielo los tiradores no nos darán cuartel sus órdenes son eliminar toda amenaza estén atentos bien objetivo adelante Sábado 1 y 2 avancen a sus posiciones y Prepárense para entrar 
+
+cuidado pistas para el asalto atentos si Valeria dijo la verdad abordamos despejamos y desarmamos el misil Y si nos vendió Que Dios le ayude que nos ayude a todos ámense para lo que sea puede ser una trampa comandante listos a trabajar 
+
+los en esta plataforma quiero contención total copiado tiene una trenza alcantara despejado saliendo Ok sábado uno rumbo a la escalera al sureste posibles a la derecha [Aplausos] Puerto del balcón arriba arriba vamos a la cubierta 
+
+principal cuál es tu estado abordando el barco con Shadow 3 ha entendido hay que actuar rápido los quiero ver este contenedor ya enterado vamos hay que actuar [Aplausos] cada uno en la plataforma Cuál es su estado cambio me gusta el 
+
+barco está mandando una señal van a lanzar el misil es la primera etapa hay tiempo misil en muerto dos uno vamos a asegurarlo cubrenos copiado subiendo yo cubriré vean el cuarto por ciento carajos nuestras escaleras plateados para 
+
+acabar con todo Hay que sacar sus blancos sargento [Música] comandante aplazado uno la plataforma está asegurada al contenedor recibido sea neutralizado Ábrelo Dónde están los controles en el maldito barco comandante Hay un problema el 
+
+misil está armado los controles están en algún lugar del barco el lanzamiento Alejandro toma tienes conmigo iremos hacia ese barco lo mantendré cubierto hermano engánchate sargento todas las unidades de permitir entrar en el puente 
+
+copiado vamos vamos aquí 01 volvemos al agua vamos en camino a su posición entendido estamos bajo fuego luna de aterrizaje activa entendido cuando estemos en posición avanza el puente rápido asegura los controles y detendremos el misil 
+
+como abordamos usa la rampa resiste sargento entremos Al enfrentamiento [Música] están en el puente hay que detenerlo Alejandro mantén la zona alta en la plataforma vamos a subir bien atacolo Bueno podemos cubrirnos con los contenedores 
+
+para que no te aplaste con ellos el movimiento está subiendo llegamos vigilan los contenedores descubierta superior debemos llegar a la puerta a las esquinas [Música] [Aplausos] llevo la entrada del puente revisa esa puerta te cubrimos 
+
+los controles están dentro retroceda n uno voy a explotar la entrada del puente tres dos uno ejecuta nte no nos vamos vamos tú primero primero avances sargento [Música] asegurado vamos el puente está dos pisos afirmativo siguiente 
+
+pasillo show vamos estamos esperando tenemos que llegar al puente aquí Shadow uno voy a la segunda cubierta vea ese pasillo y flanquéalos [Aplausos] [Música] pasillo vacío granada malditos tos Víctor 1 nos dirigimos al puente ahora no 
+
+dispares Alejandro copiado tienes cuatro Alcatel adentro espera [Música] entremos bien veo los controles interviniendo Vamos bebé Vamos bebé Vamos bebé carajo no podemos desarmarla Porque llegamos tarde Sí bueno ya no hay tiempo para 
+
+eso gol digo uno el misil está en fase de alza cerca de lanzarse qué hacemos si no podemos desarmar detonamos entendido comandante vea los controles debemos hacer esto en conjunto El tiempo se está agotando así que tenemos que 
+
+apresurarnos es trabajo para dos shows vamos Hay que hacerlo sí estoy dentro tenemos el control Cómo procedemos es un código dal detonación automática de lanzamiento está allá atrás con los shadows a todas las estaciones despejen ya la 
+
+plataforma repito despejen la plataforma cuánto queda un minuto pienso ve a los controles lo necesitamos en modo diagnóstico para evitar el inicio de sesión oprime las teclas cleary Mode al mismo tiempo hecho qué está sucediendo un poco 
+
+de tecnomalgia bien Ahora el último dígito de la fila 2 columna 1 [Música] C de Charly perfecto se dirige a Nueva Orleans ya no objetivo actualizado oprime execute y todo listo disfrutemos nuestro trabajo Sargento Aquí vamos a todas las 
+
+estaciones para explotar mira esa enorme y hermosa tierra no puede ser Alejandro estás bien estás bien afirmativo y tú estamos bien hermano comandante uno buen tiro buen tiro misil y plataforma destruidos recibido uno buen trabajo 
+
+Aléjate de la x y vete a casa gracias por el buen trabajo enterado comandante regresemos colegas [Música] qué es esto Esto es el futuro inmediato aléjense de la entrada qué Ya me viste Estás loco este es mi base no es una base es una 
+
+enorme instalación encubierta y las miro me la quedo los relevos de su cargo gracias por su servicio no había dicho eso Valeria Entonces qué otras cosas no sé sobre tu afiliación con un narcotraficante qué chingados me acabas de decir 
+
+pendejo No hagas eso No hagas eso no necesitamos heridos aquí nos estás amenazando soldado yo no amenazo yo garantizo Así que no hagamos esto [Aplausos] manda saludos me dijo que no se lo tomarían bien Él sabe de esto me puso el mando 
+
+de esta operación desde ahora Así que retírense dejen que Los profesionales lo resuelvan Y por qué carajos hablamos de esto como si fuera una negociación no lo es tengo mis órdenes Y ustedes las suyas chingados te crees cabrón mis 
+
+hombres están adentro me Temo que no tus hombres fueron detenidos las manos encima [Música] [Aplausos] estás ahí vos Ese fue un grave error lo tenía que acabar así [Aplausos] hijo de perra encuentrenlo [Música] salgan de mi casa 
+
+[Aplausos] enviando transporte a su ubicación para los prisioneros recuerdos en la plaza Norte ahora aquí Bravo 71 a ciegas prueba de radio me gusta x-71 me copias dónde estás [Música] Johnny Johnny me copias afirmativo Pensé que habías 
+
+muerto están aquí estoy bien averigüemos que también estás conserva tu sangre necesitarás cada gota Gracias por el consejo vienes conmigo vamos por aquí una iglesia voy para allá encontrémonos ahí deberás improvisar para sobrevivir 
+
+junto a sus amigos gris y Shadow están matando a todo el mundo y a nosotros no me gusta todo esto hermano No está bien son tipos de la uno cuatro uno ellos no escriben sus propias reglas nosotros quien carajo [Aplausos] Hazlo maldita 
+
+sea que se encontraron policías vamos a hablar con ellos quieren debido a la guerra de guerrillas los santos cielo que ves una masacre cuida tu espalda no tienes a ningún Aliado por aquí pobre infeliz encontré una cuerda es un buen 
+
+inicio sigue buscando [Aplausos] rompió una cuchilla de ventilador hasta la cuchilla con la cuerda podrás hacer palanca para abrir Parece que ya has hecho esto antes años de experiencia rompí la cuchilla abriste la puerta afirmativo 
+
+bien mantente alerta hay más de donde salieron esos [Música] malditas [Música] por favor Llévate al chico sácalo de aquí Ven aquí ya estás conmigo calma Y qué tenemos aquí Mira tenemos más policías policías ayudando a los carteles eh 
+
+mostrémosles Como acabamos con la corrupción los santos cielo cierra la puta boca Cállate no hables más Esto me va a resultar muy familiar amigo enciéndelo te voy a dar en toda tu puta madre encontré una linterna estaba cerca de su 
+
+dueño anterior tu camino la atención atención quiero que lo hagan salir estén alertas a los británicos Los mercenarios están matando a todos son crímenes de guerra me dan ganas de cometer unos cuantos crímenes de guerra intolerable creo 
+
+que tendremos luz verde para ir tras Estos tipos Se acabaron las luces verdes Johnny estamos solos Qué hay de Alejandro puedes confiar en Alejandro pero lo tienen custodia si es que aún vive [Música] Alejandro es nuestro hermano si vive 
+
+está con nosotros qué mierda está pasando allá voy a echar un vistazo [Música] es el perro de la habitación No veo nada Me quedaré por si acaso viste ese perro encerrado ese que no te descubran que sangre fría Simón que tiene dos pa Tas 
+
+medio perro Lamento haber preguntado informe de la situación afuera callejón cerrado mantente oculto para que no te vean copiado puede que te den un premio Por esto una batalla una estrella en la frente pura basura dijiste que querías 
+
+ganar felicidades no seas idiota a mí no me dices idiota Perdón señora Vete al carajo mucho mejor [Aplausos] la iglesia está al norte de la ciudad preparé una posición de francotirador en la torre de la iglesia Busca la forma de llegar 
+
+y quizás sobre vivas escúchame cabrón estás cometiendo un error muy muy grande me gusta trabajar con narcos como es territorio me gusta el dinero mucho dinero No güey Por favor Grace se está matando policías [Aplausos] una botella es 
+
+una buena distracción Aquí está tranquilo los narcos salieron de Dodge aunque no son ellos los que me preocupan [Aplausos] Estoy preocupado preocupado no es lo mismo que tener miedo No no es lo mismo para nada en la cabeza me dices que 
+
+si ves a este sujeto enorme con la calavera no comenzarás a sudarte tienes razón no lo verás será demasiado tarde si lo ves Ya estarás bien muerto [Música] Y eso tire una botella funcionó de maravilla te lo dije Presta atención y tal 
+
+vez un poco de cera podría resultar útil encontré productos químicos juntalos con un poco de cera y tendrás una bomba de humo una distracción tóxica brutal me gusta te aseguro que a ellos no aquí estoy segura el idiota con la máscara y 
+
+el otro lebrel ya cierto este es uno de esos sujetos con falda se llama tartán es un sujeto con vestido Eso es todo lo que sé [Aplausos] me sirve [Música] qué carajos fue eso echaré un vistazo [Música] recibido adelante todo despejado 
+
+tus falta un cuchillo creo que allí uno algunos de los muertos son obra mía pasaste por aquí de camino a la iglesia y me dejaste estoy acostumbrado a solo creí que no había que dejar a nadie atrás mira y sacarte de aquí entero alguien 
+
+debe sobrevivir para contarlo [Música] Cuáles son mis posibilidades no me hagas apoyo [Aplausos] puede ser de utilidad el que busca en contra que encontraste pólvora negra bien Esto podría poner [Aplausos] se interés [Música] trampa 
+
+para ratones podría encontrarle algún uso es muy útil si se usa como detonador para ser explotar algo así no es un ataque aéreo pero servirá [Música] [Música] sí Teniente Estoy a punto de jugar espera los Tenemos uno menos bien le quite 
+
+el arma buen trabajo parece que estás teniendo éxito Johnny elige bien la disparos y objetivos inteligencia Ese es el truco mierda vamos eso parece mantente en guardia y Sigue avanzando a la iglesia sí te sientes débil un poco sacudido 
+
+señor tendría sentido que no estuvieras del todo bien Busca un estimulante te dará un empujón [Aplausos] [Música] [Aplausos] [Música] el cielo se cae aquí afuera qué quieres decir está lloviendo a cántaros entonces dilo eso hice la 
+
+lluvia es buena cubrir a tus huellas también las de ellos preocupémonos por ti Johnny entonces si te agrado me agradas vivo voy adentro recibido Toma lo que necesitas para sacarte los de encima sí precioso con pegajoso Ahora sí encontré 
+
+un cable trampa conectado a una escopeta lo desarmé y tomé el arma muy bien pensado Johnny [Música] Johnny se está trabajando de noche para encontrarlos graves está involucrado sea como sea esto es un desastre sin precedentes tenemos 
+
+que investigar a fondo resolver estas cosas en este momento no es seguro aquí ahora mismo No es seguro en ningún lado [Música] [Música] hijo de un maldito demonio recogía algo de cinta muy útil por si tengo que envolver un regalo El que 
+
+busca encuentra [Aplausos] [Música] Buenos días México estoy en la cafetería tráeme un té inglés es idiotas me deberás una por esto porque estoy solucionando tu problema mi problema la máscara quítatela muestra mi cara Sí señor negativo 
+
+eres feo todo lo opuesto lo dudo me lo quedo qué fácil genial una Calibre 50 tú vienes conmigo adivina lo que encontré más armamento Sí tu esperanza de vida acaba de aumentar ustedes dos revisen ese almacén no tiene arma no llegará muy 
+
+lejos es de la 141 sigue siendo peligroso ya a la izquierda entendido hoy estás aquí va a estar tarde para Rendirse Johnny este lugar está lleno de túneles uno de ellos sale al otro lado de la iglesia pero el túnel Está inundado 
+
+prepárate para el agua fría Qué emoción ahora me pertenece hijos de puta locamente el trasero cambiando cargador fuego maldita sea por aquí [Música] [Aplausos] creo que está despejado bien alerta y reúnete conmigo en la iglesia estás 
+
+avanzando Sí ya casi dos veces dorados están en un tanque continúa uno voltea y dice Tú sabes conducir esta cosa un poco de humor muy poco uno más tengo uno para ti A ver dilo Qué le pasó al león que se comió un jabón que ahora espuma 
+
+[Aplausos] la Plaza de la iglesia está del otro lado del túnel hay charos con blindaje corporal no tendrás que acercarte y encontrar los restos débiles [Música] el enemigo está cerca atacando tiene una escopeta [Aplausos] [Música] 
+
+atentos a esas esquinas [Música] [Música] [Aplausos] ya ves la iglesia sí bien vas por buen camino sigue adelante la zona está bloqueada Ghost corta camino por las tiendas por aquí puedo pasar Teniente los chavos están en todos lados 
+
+los contendré hasta que los reagrupemos delante de la iglesia y consigamos un vehículo de extracción afirmativo Ya casi lo logramos Puta mierda [Música] tengo uno cerca de la iglesia madre mía Fuiste tú respiro contestarse llega a los 
+
+escalones aquí Yo estaré recibido Con permiso encontré aceite aceite una botella y soga para la Mecha es hora de un cóctel [Música] [Música] necesitamos un vehículo vamos atención saben que estamos aquí Quienes son enviarán contacto 
+
+adelante adelante no te alejes Busca un vehículo que podamos usar adelante hay una camioneta con las luces encendidas la veo yo conduzco Johnny a mi lado Felicidades Johnny lo lograste lo logramos teniente [Aplausos] ya forma de hacerlo 
+
+cuidado gracias [Música] dónde estamos en el refugio de Alejandro me dio la ubicación por si acaso Por qué no me dijo a mí era algo confidencial Pero y si yo necesitaba placa de presión Alejandro la modificó maldito genio por ahí 
+
+[Música] quieto yo no está ahí Rodolfo están vivos afirmativo Qué bueno verlos amigos igual amigo nada más dónde estaban escapando yo escapando y con usted esperándome desde luego no no sí somos un equipo todos nosotros esto pasó en mi 
+
+guardia y necesito ayuda para arreglarlo nadie pelea a solas Qué pasó con graves no sabemos las almas corrompen cualquiera a nosotros no por ahora al general y a cualquiera fuera de este cuarto se le considera enemigo con una excepción 
+
+Alejandro necesitamos que vuelva venga retiene justo aquí en su propia cárcel clandestina mi equipo también está ahí encerrado como los recuperamos entrando a la fuerza y es por eso que quiero algo usted necesitaremos más que esto 
+
+[Música] no será problema Perfecto amigo necesitamos llantas nuevas que sean blindadas Alejandro pensó en todo Sí así es vamos por él la vieja prisión está en un área remota fuera de las almas era de máxima seguridad hasta que los 
+
+narcos se adueñaron de ella y cerró para siempre no hay pista pero hay helicópteros de seguridad y de reabastecimiento los desviaremos del camino y nos infiltraremos si hay guardias en las torres Tendremos que eliminarlos primero para 
+
+trepar por la pared y entrar y las cámaras la sala de seguridad tiene circuito cerrado No servirá para localizar a Alejandro y al resto de tus hombres mientras Rudy Busca a Ale yo usaré las cámaras para ayudar a Costa colocar cargas 
+
+señuelos y Sabotaje muy bien Johnny aprendí del mejor Teniente cuando ubiquemos a Alejandro y a los vaqueros nos reagrupamos y los liberamos llevaremos armas extras para equipar a mis hombres y abrirnos paso por donde llegamos alguna 
+
+pregunta qué estamos esperando cerrará todo el lugar habrá patrullas esperando sin duda todo listo armas munición y cargas en las mochilas tengo el gancho trepadores listo listo esperemos que Alejandro esté vivo claro conmigo ve a la 
+
+izquierda rastro vamos a seguir Hace cuánto conoces a Alejandro 20 años el tipo más duro del regimiento no me gustaría meterme con él solíamos decir que Alejandro es el dueño de la muerte Qué quiere decir solo Alejandro puede matar a 
+
+Alejandro me alegra que esté de nuestro lado a huevo guarda atentos a la prisión patrullas en el exterior Tendremos que matarlos para poder entrar dos tiradores primera Torre son tú dale a uno yo eliminó el otro shadows eliminados 
+
+buenos disparos hermanos voy a blanquear y despejaremos el campo Rudy échanos una mano atentos Viene un helicóptero parecen suministros rocas uno solo a la derecha primero acaba con los dos en el vehículo y los otros no lo verán copiado 
+
+cuando te diga elimina el de la gorra listo probando tres dos sólido dos menos en marcha dale a los dos a la derecha del vehículo Yo le daré al del otro lado [Aplausos] listo todo despejado llegué hasta la base de la Torre es nuestro 
+
+punto de acceso en silencio subamos buen enganche tú primero tenientes todo tuyo cuidado al disparar arriba sí arriba copiado detrás de ti vamos a la sala de seguridad manténganse cerca Busca una escotilla con escalera bien Voy a bajar 
+
+arriba todos dentro sigamos el edificio de seguridad está enfrente tiene circuito cerrado vamos rápido y agachados dos adentro acabemos con ellos antes de que llamen a sus amigos tienes que usar un arma de corto alcance en el interior 
+
+todo despejado localizamos a mis hombres con las cámaras y Alejandro vamos a necesitar distracciones colocaré algunas cargas afuera Tú serás mis ojos Sí vea las cámaras estoy en esto yo también estoy afuera atención entendido suerte 
+
+teniente dime cuando esté despejado para poder pasar la entrada libre ve accede a la cámara de adelante y busca amenazas un shado baja fácil recomiendo que uses una baja eliminado hay varios shadows y tienen armadura agáchate recibido 
+
+Shadow en el balcón acércame a ellos avanza uno a tu izquierda no hace mal algo de ayuda he Teniente concéntrate Johnny Por qué todo tan serio todo táctico sargento [Aplausos] [Música] ve a la caja hay uno doblando la esquina sube te 
+
+veo en la azotea hay uno abajo [Música] llevan tendré que acercarme el basurero está a tu derecha ahora de sacar la basura hay uno patrullando en la zona con alambre uno en el rincón con el arma abajo Johnny da la orden de seguir Hazle 
+
+un buen corte buenas noches [Música] atención un Shadow Hazlo sangrar y acabalo señor eliminado [Música] [Aplausos] ve al vehículo fue el lugar para poner una carga como se ve tres shados enfrente necesitarás una distracción adelante 
+
+listo colocada en marcha Guardia en la pasarela espera te daré la señal [Música] adelante teniente [Música] hora de una distracción lo tuyo señor uno se dirige a ti Algo que me encuentre en el camino [Música] Usa tu cuchillo ya cayó uno 
+
+izquierda aprieta el gatillo y mátalo puedes avanzar [Música] puedes avanzar uno a tu izquierda muéstrale algo bien afilado otro Shadow muerto [Música] Shadow derecha sugiero que podría toparse con ese muerto que dejaste Yo podría a Él 
+
+duerme bien imbécil de una camioneta que puedes acabarlo clásico Ghost plantando carga [Música] los menos andando veo uno adelante ve a la caja izquierda Usa tu cuchillo teniente a dormir derecha atención dos shadows Shadow izquierda 
+
+acuchilla lo este transporte blindado es perfecto para una bomba [Música] ahora ya puedes colocar esa carga estás bien [Música] uno en lazo te hago usted busca cómo puedo subir Ve ahora despejado muévete necesitarás una distracción veo 
+
+dos que se acercan parece despejado [Música] estás bien adelante [Aplausos] sube uno en tu dirección acuchilla lo y sigue buena baja acuchilla lo observa Qué belleza señor dos saliendo de la carretera Déjalos pasar otro transporte 
+
+blindado con tu nombre puedes avanzar ve al camión a la izquierda uno a tu derecha elimina lo dulces sueños basura [Música] adelante Teniente y otro menos de que preocuparse a Alejandro Justo a tiempo lo encontré donde espera puta madre 
+
+es él está en confinamiento dos en la puerta los veo Ghost lo tenemos está solo dos en guardia del bloque de la Celda lo liberaremos entendido en camino buen trabajo igual amigo Alejandro habría hecho lo mismo eso vamos por unos 
+
+vaqueros Cuál es la situación Oye el camino copiado vamos en camino dado con el helicóptero parece que estamos fuera de su carta de decisión lo que de celdas la entrada está adelantemos dos al infierno y entremos todo despejado está 
+
+cerrada habrá que forzarla no lo di hay que golpear conmigo hay enemigos en el primer piso por las escaleras los mantendremos ocupados hacia arriba venimos detrás de tis al Canal Alejandro está aquí vamos Alejandro está al final del 
+
+pasillo a la derecha claro para esto vinimos Alejandro Coronel tranquilo somos nosotros Pensaste que te dejaríamos porque mierda tardaron tanto pendejo y lo deseados será un infierno que sea Fuego contra fuego hay más vaqueros en las 
+
+celdas de arriba hora de sacarlos Órale te sigo Rodolfo viste aquí no pero planeo hacerle una visita especial Yo también tienen guardias en todos los pisos Prepárense bastante que tengas a la mano creo que está despejado los vaqueros 
+
+están presos en estas celdas aquí estamos vaqueros hora de ir a casa lo Sacaremos hermanos no se preocupen derribaremos las puertas las puertas se abren con los controles que están en el puesto frente al pasillo [Música] en ello Órale 
+
+mis hermanos hermanos fuertes viento parrantes ninguna prisión puede tener a los que quieras estoy con ustedes este fue el pasillo del desastre hagamos un desastre los shadows saben que estamos aquí amigos asegúrense de que esté 
+
+despejado parece despejado Coronel sin amenazas en la puerta [Aplausos] tiene candado yo me encargo siempre preparado te sigo Coronel armas de madera va hacia abajo y afuera nos conectaremos con los demás y saldremos esta mierda los 
+
+vehículos le sale bien Tendremos que cruzar el patio para sacar a todos por la derecha [Aplausos] [Aplausos] francotiradores de [Aplausos] [Aplausos] explotala cuidado francotiradoras es hora del bunka buen efecto avance mos [Música] 
+
+[Aplausos] este malditos [Aplausos] despejado por ahora Rodolfo Hacia dónde Métete por el edificio a la izquierda [Aplausos] estos shadows están locos mercenarios Johnny malditos aspirantes parece tranquilo toma todo lo necesario para 
+
+que sobrevivamos todo bien copiado Tendremos que despejar el paso para cruzar [Música] [Aplausos] [Aplausos] [Música] tenemos que acabar con ellos nos van a perseguir he pensado Rodolfo aparte no hay un campo que podemos usar para 
+
+flanquear tenemos que trepar ese muro y ese ruido el helicóptero lleguen aquí lo Sacaremos entendido fuerte y claro para eso vamos para allá un amigo Ya hasta me cae bien Vamos vaqueros vayan al muro entre las torres ya atención hay 
+
+cuerdas desplegadas úsalas para subir entendido [Aplausos] [Música] [Aplausos] despejado por ahora pero vienen los Shadow peso seguro [Música] sargentori que bueno verte capitán simple como eso el sólida como una roca Coronel Vargas Te 
+
+presento al Capitán price y el sargento Gracias por la ayuda tienen enemigos [Aplausos] más vehículos al frente Mira esto juego de contención los aliados están escalando en cuanto suman nos vamos tenemos francotiradores matenlo vamos 
+
+avanzan rápido mientras está despejado listos para partir Coronel entendido a la mierda salgamos aquí hermanos abajo del muro nos retiramos ya nos vamos [Música] esos dos son nuestros listo Rodolfo toma el camión en el que vinimos 
+
+recibido vaqueros Síganme Rudy nos vemos en la casa Así será Coronel buena suerte capitán sígueme nos toca [Música] que descubrió la verdad [Música] acabo de descubrir información censurada sobre una operación conducida por el general 
+
+shepard y ejecutada por la compañía Shadow negociaban misiles balísticos estadounidenses con nuestros aliados que enfrentan a los rusos en medio oriente la misión no salió según los planetas te traemos tendría que matarte no me 
+
+sorprendería esto es de rutina muchachos armas para los buenos estarán de vuelta para el desayuno si no la cagan habrá bonos para todos busquenme cuando regresen necesita un informe no lo dejes esperando fuera tres contenedores eso es 
+
+demasiado no para ellos a comandante Gold digo 2 3 shadows saliendo de la carretera 7 zulos sin problemas comandante a tiempo no falles he ido fuera no falles ya les dije que era importante qué es esto tres soy erikson Qué pasa hay un 
+
+vehículo atención nos demoraron lo estamos solucionando el reconocimiento Indicó que el camino estaba despejado los informes estaban equivocados el cargamento fue detectado antes de llegar a su destino señor tienes que moverte no me 
+
+gusta esto espantoso asómate y cúbrelo estoy en eso necesitamos un intérprete [Música] contacto atrás atrás a la vista estamos bajo fuego múltiples vacas contacto atrás no pierdas la carga este edificio en la azoteas RPG debemos 
+
+movernos vamos Estamos rodeados fuertes comandante solicitamos fuerza de respuesta rápida veamos todo lo que tenemos general necesitas apoyo Estos son mercenarios rusos qué demonios hacen estos allí todos las estaciones tenemos 
+
+mercenarios rusos repítelo La tropa enemiga es rusa que estaba despejando demasiados necesitamos refuerzos comandante mis muchachos necesitan apoyo no podemos hacer eso lo sabes mierda al suelo [Música] cualquier Estación en esa época 
+
+empezado cuál es tu situación nuestra situación contenida significa que no se reportará esta operación los rusos ejecutaron a todo el pelotón y obtuvieron las comunicaciones de Shadow descubrieron que ser parte era el encargado Rusia le 
+
+dio los misiles a hassan sheppard tenía buenas intenciones pero los envió serán ilegales y sin registro lo taparon el encubrimiento siempre es peor que el crimen estábamos demasiado cerca y no dejarían que eso sucediera se robaron tres 
+
+misiles solo encontramos dos hassan tiene uno más debemos encontrarlo esto porque todos tenemos secretos capital porque carajos no me informaste considerate muy informado por ahora yo mierda sí que es útil general Gracias pero llegas 
+
+tarde y te faltó un misil hay tres y solo tenemos dos entonces no necesito arreglos soy un patriota protegiendo a mi país solo te proteges a ti hago lo que se tiene que hacer y nadie puede venir a decirme lo contrario yo sé lo que le 
+
+conviene a la causa Ya perdiste la razón general para hacer el bien hay que hacer el mal la mierda que hacemos la enterramos Así es como funciona Sí pero no nos enterramos con la mierda tienes que cambiar esa mentalidad y enfrentar al 
+
+verdadero enemigo y tú necesitas controlar a tu Shadow él es un perro con un hueso y en verdad te aconsejo que no intentes quitárselo última oportunidad para cambiar de opinión y luego que luego luego voy a ir por ti [Música] por acá 
+
+Órale vaqueros pongan atención escuchen recuperaremos nuestra sede salvaremos a los nuestros y vamos a matar a graves cuando ahora es una pelea contra los nuestros no somos de la 141 ni de los vaqueros somos un equipo Ghost [Aplausos] 
+
+[Música] s si vienen tomen una máscara y si no váyanse [Música] [Aplausos] estropas conocen las instalaciones de las fuerzas especiales mejor que los Shadow tendremos ventaja estarán alerta por la fuga de la prisión nos infiltraremos en 
+
+la base con dos equipos de voz el equipo uno somos el capitán price gas un piloto y yo el equipo 2 es Ghost Rudy y los vaqueros el equipo 1 será los túneles para llegar a la plataforma y tomar un helicóptero mi piloto elevará al Capitán 
+
+el equipo 2 esperará afuera hasta que price los deje pasar para que se abran camino hasta Grace sospecho que él estará en mi cuartel y lo cuidarán sus mejores tiradores Mientras casi yo localizamos y aseguramos a Valeria el equipo 2 de 
+
+ghoste encontrará a Grace y lo eliminará [Música] armas listas hermanos atención atención Espera espera trampas pinche huevo graves veamos va Granada Esto será peligroso Tendremos que deshabilitarlas cuidado cuidado [Música] bien Habrá 
+
+más escucha el sonido se mueven pero las tuberías los bloquean aprovechemoslas bien pensado Corona odio ver esto en mi base cuando encontremos a graves lo matamos despacio cuando sea seguro más bien avancemos mis hombres usan estos 
+
+túneles aquí abajo practicamos el escape y la evasión recuerdas tu entrenamiento vaquero Cómo olvidar lo comandante los entrenaste bien eres un buen soldado Cuando esto acabe vamos a hacer tacos al pastor en mi rancho mis favoritos 
+
+estamos bien a la izquierda no estamos encárgate de uno y yo del resto estuvo cerca Sargento con cuidado [Música] es un maldito laberintor por suerte me tienes a mí por aquí pero no cambio los códigos no esperaba vernos [Música] Fuera 
+
+fuera Tenías razón cuando diga al fuego por abajo contacto [Aplausos] [Música] [Aplausos] lo tengo Vamos adelante estamos en el centro de la Basílica aseguraremos un helicóptero y lo llevaremos al aire capital gas estás conmigo [Música] 
+
+detrás de ti detrás de ti dos por helicóptero eliminamos los shadows por el helicóptero elimina los listo s 6 El aves toda tuya mantente comunicado Sí señor Alejandro sirve tu piloto es el mejor que tengo buena suerte vamos al interior 
+
+conmigo Cuál es el código 627 Ojalá aún sirva estamos dentro conmigo tras él atención atención estoy listo y tengo visión entendido para vosotros puedes disparar cuando el objetivo Este mercado creemos está en el cuartel bien plantado 
+
+adentro nos dividimos el apoyo aéreo abrirá con los shadows en fuga buscamos a Grace y lo matamos comprendes claro con el identificador marco objetivos a prices en el helicóptero entendido todo listo puerta de seguridad a la izquierda 
+
+varios shadows en guardia Ese es nuestro objetivo necesitamos disparos antes del asalto marca la puerta objetivos pidiendo armas zona marcada atacando tu marca a los tramos como cobertura para llegar a Valencia conmigo ahora blanco 
+
+marcado objetivos hay que encontrar un lado del cuartel Solicito juego objetivo marcado marcador atraviesa los barracones del edificio principal Este es el cuartel están ahí esa Torre parece que nos podría acercar al cuartel objetivo 
+
+fijado vía libre para atacar lo encárgate de este vehículo show francotiradores objetivo fijado fuego A discreción estoy del edificio de las puertas especiales bien limpia todas las amenazas adentro si pesa graves elimina Lamento lo de 
+
+tu base Yo también hermano Dale tres dos uno ahora [Música] estamos dentro conmigo a todos los Ghost tú no está adentro el lugar está lleno de Shadow estoy contigo [Música] despejado bien hecho vamos por Valeria Shadow en el helicóptero 
+
+eso nos dará oportunidad de momentos sí Valeria está en el hangar tres que no te vean nos abriremos paso hasta allá podemos usar vehículos para cubrir nuestra calle sospechabas que graves no tramaban nada bueno normalmente vigilo a los 
+
+gringos pero no yo confiaba en ella hombres malos pueden hacer el bien son buenos pueden hacer el mal Así es Qué significa Gringo la guerra México estadounidense los estadounidenses usaban abrigos verdes Cuándo fue 1847 los mexicanos 
+
+querían que se fueran gringo o Rango no lo sabía parece que los muchachos les están dando un infierno al día para ser usado así es si salimos de aquí con vida te enseñaré algunas buenas groserías mexicanas Claro que sí me acerco a tu 
+
+posición te veo hagamos reconocimiento del lugar ya casi llegamos falta poco el hangar está cerca no te alejes detrás de ti [Aplausos] Pero uno al descubierto necesito Carnaval creo que está despejado cuidado una puerta está abierta 
+
+código 627 Valeria está en un contenedor Al otro lado del hangar bien podríamos entrar y ayudarlos por aquí escuchas eso afirmativo el equipo 2 lo logró [Música] despejado todo despejado vamos al contenedor [Música] Bolivia 5 ahora 
+
+aseguremos esta posición prisionero asegurado Rodolfo tiene los códigos no tienen algo un poco más fuerte [Música] bien limpia todas las amenazas al centro si ves a graves eliminalo Rudy Lamento lo de tu base Yo también hermano Hola 
+
+tres dos uno ahora contacto primer piso está huyendo Vamos vamos vamos vamos primer piso ahora estás bien cargadores no llegará lejos por ahí sea trincherará parece que está despejado vayan a la sala de control hay una salida por atrás 
+
+seguro que graves la usó a todas las estaciones estamos cayendo Ay carajo capital pues hijo de puta de graves vayamos allá a detenerlo Rodolfo qué hay del otro lado te tengo vamos acabemos con este pendejo Toma mi mano tú vienes no 
+
+necesitan ayuda termina en esto mira un maldito tanque bueno porque calcinar a este bastardo necesitaremos algo más fuerte para matar a crédito en El Tanque aquí es donde entrenábamos podemos usar muchas cosas Busca hacer cuatro que 
+
+podamos usar nuestros amigos mexicanos se metieron con el hombre equivocado matabilly sal de ahí hablemos un rato creo que esto es un juego de tierra si quieres jugar a la guerra vemos a la puta guerra muchachos uno de ustedes imbéciles 
+
+tiene que morir al último Quién va a hacer Vete a la mierda graves tienes una sola falta de respeto Por la autoridad me gusta eso de ti eres un perro faldero te pagan para romper las reglas solo hay dos opciones aquí abandonar o ganar 
+
+Adivinen cuál elijo hecho un vistazo Sargento debe haberse 4 encuentralo deberías haberte ido a casa cuando Tuviste la oportunidad show tú y el idiota con la máscara escondiéndose detrás del uniforme llevabas ese uniforme el uniforme me 
+
+quites la piel como una maldita víbora como un maldito soldado tuviste que crear tu propio ejército porque no pudiste en el de verdad eso es casi gracioso viniendo de ti pero también Recuerdo cuando era novato estás camino al infierno 
+
+le dije que te fueras a casa pero no me escuchaste vas a pagar por esto olvídate de esa mierda de honor Johnny en una semana estaré bebiendo tequila y ya habré olvidado donde cerré tu trasero eso va para los dos no pienses que los uno 
+
+cuatro unos son sus amigos Rodolfo porque no lo son a ellos no les agradan muerto acaben sus amigos se eliminarán a los vaqueros como si fueran un mal hábito pendejo no seas estúpido me entiendes el tanque es vulnerable explosivo sigue 
+
+golpeándolo Entre cuatro son úsalo para el tanque de grave esto lo tuvo que sentir Hay que seguir [Música] lo logramos hermano tras un arma a pelear con tanques lo vencimos el piloto bien cambio Alejandro la base está asegurada graves 
+
+está muerto ya vamos en camino [Música] Qué pasó vaquerito de mierda comenzaste una guerra a ti te persigue la violencia a todas partes me cae Yo no hice ningún trato contigo fueron ellos Esa fue tu cagada precisamente tengo gente que 
+
+hace eso [Música] Dónde está el otro misil Chicago [Música] qué carajos pasa dije que revelaría dónde estaba no que lo detendría hija de la chingada les advertí quería algo así dirijo un negocio señores es crecer o Morir así funciona el 
+
+mundo no Se le estoy poniendo a Chicago ahora váyanse de las almas y encuentrenlo pendejos para afuera por ahora estudiar pero volveremos Eso espero andando a la chingada prepara el transporte esta noche las almas descansan seré libre 
+
+en 24 horas no puedo decir lo mismo de ustedes vaqueros vas a caer por todo lo que hiciste no importa lo que hice importa lo que puedan probar [Música] tienen trabajo sigue luchando por la causa hermano hasta el final mi hermano suerte 
+
+amigos el Sin nombre nos dijo que el tercer misil fue contrabandeado a los Estados Unidos por el puerto de Chicago y sus soldados de alcatana lo tienen no sabemos exactamente dónde está el misilo a donde se dirige sabemos que llevaron a 
+
+un edificio en Chicago que le pertenece a una empresa fantasma del Cártel de las almas la policía está en tierra acordonando las calles que rodean el edificio buscan un contenedor robado lleno de armas lo que no saben es que se trata de 
+
+un misil creemos que hassan está oculto en una sala de servidores reforzada en el piso 54 de este edificio estar en tierra trabajando para encontrar el misil me entraré con Los Marinos en el río de Chicago encontraré por la planta baja 
+
+iré en helicóptero a un puesto de observación para vigilar al objetivo aterrizaremos los helicópteros en la azotea del edificio objetivo uno con una tropa de marinos presionarán hacia arriba del edificio de los servidores nuestra misión 
+
+principal es localizar y detener el misil pero tienen permiso para ejecutar a hazard water uno a comandante Bravo 6 el perímetro es seguro tenemos una posible ubicación del contenedor avanzando ahora Bravo estamos listo [Aplausos] 05 
+
+enterado vamos 62 estaba 20 segundos del edificio se recortan muchos alcatraz puesto el camino empieza 56 es Nuestro objetivo principal está muy fortificado y tiene acceso restringido quizá ahí copiado acabemos con este maldito de una 
+
+vez por todas afirmativo aquí copiado teniente Qué tienes similes está haciendo tiempo ustedes eliminen toda reuniones abajo tienes permiso para pecar todo asegurado cuatro blancos adelante tres en la sala uno en el pasillo despejado 
+
+falta un piso más dos estáticos comprueben antes de atacar [Música] hay cinco de ellos [Aplausos] la vuelta despejado en 51 07 bien a seguir Rehenes asegurados [Aplausos] carga colocada Aléjate water uno estamos en el objetivo situación 
+
+situación cuidado los controles no están en el contenedor tiene vamos hacia el objetivo ahora fuera avancemos esperemos que usa la sala del servidor ese lugar más seguro del edificio adelante tengo poca munición despejado no está 
+
+cazando a todas las estaciones no está el objetivo a la sala de control ahora [Música] [Música] Adiós adiós enviando cargador está bien ya ya [Aplausos] vamos puedo ver la sala de control a todas las estaciones casano está no hay nada 
+
+en la sala de control Ghost descubriste algo afirmativo posiblemente el punto de entrar hasta cuatro pisos más abajo a todos los brazos se encontrará el piso 40 40 rempujaremos hacia ti vamos a apretar las hojas cuando encontremos esos 
+
+controles dependemos aquí para desarmar copiado Ya lo hice una vez cobertura ahí afuera [Música] Ven aquí sargentos suscribirte porque esto entra aquí [Aplausos] [Aplausos] [Aplausos] [Música] [Aplausos] despejado vea las escaleras gas 
+
+situación [Aplausos] vamos a las escaleras hacia abajo vamos [Música] a todas las estaciones activo repito lanzaron el misil Ah mierda Cuál es el objetivo trabajamos vamos esas puertas despejemos todo esto y se la muestra aviatutos 
+
+cargador cúbrete Dónde está pasando lo tenemos acorralado en este piso Síganme [Música] todo en orden estaré bien ustedes vayan dando los controles de los misiles vamos a hacer entendido atentos se dirige a Washington no tenemos mucho 
+
+tiempo para distraernos lo primero sargento casán está en el último elevador salta hasta llegar al suyo [Música] es elevador no resistirá salta [Aplausos] vamos después Cuál es su situación piso de construcción controles asegurados 
+
+perdí mi arma las comunicaciones 1 lanzaron así que tendrás que detonarlo a distancia pero te llevará tiempo abre los controles cuando estés listo el objetivo es Washington ve a un lugar seguro y abre los controles quién estoy de vuelta 
+
+Lo siento los misiles están a medio camino del objetivo debes terminar la secuencia coordenadas 38 menos [Música] al mismo tiempo estoy adentro lo siguiente es la anulación deberías ver cuatro columnas de datos Necesito saber que hay en 
+
+la fila 2 columna 3 fila 2 columna 3 por ciento eco Sierra papá ahora anulación activada Ponte algo y abre los controles tenemos que hacer esto ahora en marcha último paso oprime el link cuando la luz verde está en la cuarta posición 
+
+mierda tendrás que calcular o primer link cuando el verde está en la cuarta posición un placer hacer negocios contigo tiene guardias de alcatala voy a matar a todos y cada uno y luego lo mataré a él fuera la puta madre bien hecho choni 
+
+ahora la parte difícil te miente Esa fue la parte difícil veamos tienes que sobrevivir eliminar a los guardias y matar a hassan solo Necesito un arma aplica una Golfo de omán como los viejos tiempos notas orientales fue ayer Busca 
+
+materiales que te sirvan jabro con los mayores terroristas del mundo ahora se aterrorizan a sí mismos no este vidrio encontré algo de vidrio y tienes una navaja puedes romper el vidrio para obtener más Pero eso te comprometela [Música] 
+
+navaja de vida encontré algo de chatarra [Música] [Música] aquí hay un trozo de vidrio encuentras cinta y fabrica una navaja si necesitas más rompe un poco Solo ten cuidado con los hombres de Cazador [Música] [Música] vigila las 
+
+ventanas no estamos atacando estamos invadiendo [Música] tiro perfecto teniente ya rojiste Sargento a todas las unidades asana batido enemigo muerto [Música] los oficiales informaron que una sobrecarga eléctrica causó una explosión en 
+
+Chicago anoche debido a vientos severos que dejaron a miles de residentes en la oscuridad se espera que regrese la electricidad antes de la tarde de hoy en otras noticias escritura creativa no diré nada rusos [Música] se escaparon 
+
+tuvieron una ventaja por los que nos faltan casar [Música] noticias de [Música] fuera del radar ya lo encontraremos hay objetivos mayores [Música] investigue sobre los rusos vaya trabajo sucio los ultranacionalistas atacaron este convoy 
+
+No claro que no trabajan con alguien más [Música] no tenemos un nombre no es nuevo [Música] [Aplausos] [Música] [Aplausos] [Música] [Aplausos] [Música] quién es macaco [Música]
+
+`).then(e => console.log(`Código finalizado, ${e} mensagens enviadas`)).catch(console.error)
